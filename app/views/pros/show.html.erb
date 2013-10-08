@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @pro.name %>
+</p>
+
+<p>
+  <strong>Localhost:</strong>
+  <%= @pro.localhost %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @pro.url %>
+</p>
+
+<p>
+  <strong>Des:</strong>
+  <%= @pro.des %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_pro_path(@pro) %> |
+<%= link_to 'Back', pros_path %>
