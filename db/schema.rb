@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131008081843) do
+ActiveRecord::Schema.define(version: 20131010082845) do
 
   create_table "pros", force: true do |t|
     t.string   "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20131008081843) do
     t.text     "des"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "branch"
   end
 
 end

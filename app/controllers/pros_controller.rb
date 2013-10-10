@@ -4,7 +4,9 @@ class ProsController < ApplicationController
   # GET /pros
   # GET /pros.json
   def index
-    @pros = Pro.all
+    @pros = Pro.page(params[:page]).per(5)
+
+
   end
 
   # GET /pros/1
@@ -28,7 +30,7 @@ class ProsController < ApplicationController
 
     respond_to do |format|
       if @pro.save
-        format.html { redirect_to @pro, notice: 'Pro was successfully created.' }
+        format.html { redirect_to @pro, notice: '新建成功' }
         format.json { render action: 'show', status: :created, location: @pro }
       else
         format.html { render action: 'new' }
@@ -42,7 +44,7 @@ class ProsController < ApplicationController
   def update
     respond_to do |format|
       if @pro.update(pro_params)
-        format.html { redirect_to @pro, notice: 'Pro was successfully updated.' }
+        format.html { redirect_to @pro, notice: '更新成功' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -69,6 +71,6 @@ class ProsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pro_params
-      params.require(:pro).permit(:name, :localhost, :url, :des)
+      params.require(:pro).permit(:name, :localhost, :url, :des, :branch)
     end
 end
