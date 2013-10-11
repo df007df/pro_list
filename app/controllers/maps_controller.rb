@@ -7,18 +7,21 @@ class MapsController < ApplicationController
 		@pros = Pro.all
 
 		@pro_list_adress = []
+		@pro_list_ip = []
+
+		urls = []
+
 		#pro_list 
 
 		@pros.each do |item|
-			
 			if !item.url.empty?
-			 logger.debug item.url
 			 ip = IPSocket.getaddress(item.url)
-			 @pro_list_adress.push getAdressForIp ip
+			 urls.push ip
+			 @pro_list_ip.push({:name => item.name, :ip => ip})
 		  end
     end
-
-		@pro_list_adress
+ 
+		@pro_list_adress = getAdressForIp(urls.join(','))
 	end	
 
 	def getAdressForIp(ip = '')
@@ -26,12 +29,7 @@ class MapsController < ApplicationController
 		if ip
 			response = open(api).read
 			data = JSON::parse(response)
-
-			{:longitude => data['geos'][0]['longitude'], 
-				:latitude => data['geos'][0]['latitude'], 
-				:more => data['geos'][0]['more']
-			}
-
+			data['geos'] ? data['geos'] : []
 		end	
 	end	
 

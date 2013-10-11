@@ -5,7 +5,8 @@
 </div>
 
 <script>
-var adress = <%== @pro_list_adress.size >= 1 ? @pro_list_adress.to_json : '[]' %>;
+var pro_list_ip = <%== @pro_list_ip.to_json %>;
+var adress = <%== @pro_list_adress.empty? ? '[]' : @pro_list_adress.to_json %>;
 
 var adressdian = new Array();
 $.each(adress, function(i,val) {      
