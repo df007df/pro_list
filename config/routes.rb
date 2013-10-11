@@ -8,6 +8,9 @@ Project::Application.routes.draw do
   # You can have the root of your site routed with "root"
    root 'welcome#index'
 
+   get 'users/login' => 'users#login'
+   get 'users/logout' => 'users#logout'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -56,4 +59,7 @@ Project::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  #match ':controller(/:action(/:id(.:format)))'
+
 end

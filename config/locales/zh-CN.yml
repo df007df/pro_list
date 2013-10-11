@@ -212,3 +212,6 @@ zh-CN:
       truncate: "..."
     home:
       jr: '进入'
+    login:
+      in: '登陆'
+      out: '登出'  

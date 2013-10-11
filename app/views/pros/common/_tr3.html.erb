@@ -2,13 +2,20 @@
   <td class="col-xs-3"><%= pro.name %></td>
   <td class="col-xs-1"><%= pro.branch %></td>
   <td class="col-xs-3"><%= pro.localhost %></td>
-  <td class="col-xs-3"><%= pro.url %></td>
+
+
+  <td class="<%if isAdmin? %>col-xs-3<%else%>col-xs-4<%end%>"><%= pro.url %></td>
 
 
   <td class="text-center col-xs-2">
     <%= link_to '查看', pro, :class =>'btn btn-default btn-sm'%>
-    <%= link_to '编辑', edit_pro_path(pro), :class =>'btn btn-primary btn-sm'%>
+
+    <%if isAdmin? %>
+    <%= link_to '编辑', edit_pro_path(pro), :class =>'btn btn-primary btn-sm'%>  
     <%= link_to '删除', pro, method: :delete, data: { confirm: 'Are you sure?' }, :class =>'btn btn-danger btn-sm'%>
+    <%end%>
+    
+  
   </td>
 
 </tr>

@@ -9,6 +9,10 @@ gem 'kaminari'
 
 gem 'pry'
 
+gem 'faraday'
+
+gem 'json_pure'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
