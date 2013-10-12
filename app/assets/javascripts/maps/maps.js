@@ -77,7 +77,7 @@ function getProAData(name) {
 var map = null;
 
 $(function() {
-
+	
     map = new GMaps({
 		  div: '#mapsdiv',
 		  mapType: 'terrain',
