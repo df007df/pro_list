@@ -1,6 +1,7 @@
 class MapsController < ApplicationController
 
 	require 'open-uri'
+	require 'uri'
   
 
 	def index
@@ -16,21 +17,20 @@ class MapsController < ApplicationController
 
 		@pros.each do |item|
 			if !item.url.empty?
-			 #ip = IPSocket.getaddress(item.url)
-			 #urls.push ip
-			 #@pro_list_ip.push({:name => item.name, :url => item.url, :ip => ip})
+	
 			 @pro_list.push(item)
-		  end
-    end
+		   end
+    	end
  
-		#@pro_list_adress = getAdressForIp(urls.join(','))
 	end	
 
 
 	def getAdress 
 			url = params[:url]
-			if !url.empty?
-				ip = IPSocket.getaddress(url)
+			hosturl = URI.parse(url).host
+			hosturl ||= url
+			if hosturl
+				ip = IPSocket.getaddress(hosturl)
 				@pro_list_adress = getAdressForIp(ip)
 				render :json => @pro_list_adress.to_json
 			else 
