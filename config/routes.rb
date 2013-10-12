@@ -1,6 +1,6 @@
 Project::Application.routes.draw do
   resources :pros
-  resources :maps
+  #resources :maps
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -10,6 +10,9 @@ Project::Application.routes.draw do
 
    get 'users/login' => 'users#login'
    get 'users/logout' => 'users#logout'
+
+   get 'maps' => 'maps#index'
+   get 'maps/getAdress' => 'maps#getAdress'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

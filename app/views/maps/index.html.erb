@@ -1,25 +1,13 @@
 
+<% content_for :head_block do %>
+<%= javascript_include_tag 'http://maps.google.com/maps/api/js?sensor=true', 'GMaps' %>
+<% end %>
 
 <div id='mapsdiv'>
-1111111111111
+
 </div>
 
 <script>
-var pro_list_ip = <%== @pro_list_ip.to_json %>;
-var adress = <%== @pro_list_adress.empty? ? '[]' : @pro_list_adress.to_json %>;
-
-var adressdian = new Array();
-$.each(adress, function(i,val) {      
-	adressdian.push(val.latitude + ',' + val.longitude);      
-}); 
-
-
-var imgsrc = 'http://maps.googleapis.com/maps/api/staticmap?format=jpg&center=36.244273,104.941406&zoom=4&size=640x640&sensor=false&scale=2&key=AIzaSyBKCg2yX3mxPHJP8ANJio5FMexvbJC4-KM&maptype=terrain&markers=size:mid|color:blue|label:A|';
-
-
-var imgobj = $('<img>');
-imgobj.attr('src', imgsrc + adressdian.join('|')).addClass('img-thumbnail');
-$('#mapsdiv').html(imgobj);
-
+var pro_list = <%== @pro_list.to_json %>;
 </script>
 

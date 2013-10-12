@@ -8,6 +8,7 @@ class MapsController < ApplicationController
 
 		@pro_list_adress = []
 		@pro_list_ip = []
+		@pro_list = []
 
 		urls = []
 
@@ -15,14 +16,31 @@ class MapsController < ApplicationController
 
 		@pros.each do |item|
 			if !item.url.empty?
-			 ip = IPSocket.getaddress(item.url)
-			 urls.push ip
-			 @pro_list_ip.push({:name => item.name, :url => item.url, :ip => ip})
+			 #ip = IPSocket.getaddress(item.url)
+			 #urls.push ip
+			 #@pro_list_ip.push({:name => item.name, :url => item.url, :ip => ip})
+			 @pro_list.push(item)
 		  end
     end
  
-		@pro_list_adress = getAdressForIp(urls.join(','))
+		#@pro_list_adress = getAdressForIp(urls.join(','))
 	end	
+
+
+	def getAdress 
+			url = params[:url]
+			if !url.empty?
+				ip = IPSocket.getaddress(url)
+				@pro_list_adress = getAdressForIp(ip)
+				render :json => @pro_list_adress.to_json
+			else 
+				render :json => '[]'	
+			end
+	end	
+
+	
+
+	private
 
 	def getAdressForIp(ip = '')
 		api = "https://api.weibo.com/2/location/geo/ip_to_geo.json?ip=#{ip}&access_token=2.00TJ877B0wq4Ihccfb424a92Kww4MB"
@@ -46,5 +64,7 @@ class MapsController < ApplicationController
 			logger.debug response.body
 
 	end	
+
+	
 
 end
