@@ -4,7 +4,7 @@ class ProsController < ApplicationController
   # GET /pros
   # GET /pros.json
   def index
-    @pros = Pro.page(params[:page]).per(5)
+    @pros = Pro.page(params[:page]).per(20)
 
 
   end
