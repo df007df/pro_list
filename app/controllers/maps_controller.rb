@@ -17,7 +17,7 @@ class MapsController < ApplicationController
 			if !item.url.empty?
 			 ip = IPSocket.getaddress(item.url)
 			 urls.push ip
-			 @pro_list_ip.push({:name => item.name, :ip => ip})
+			 @pro_list_ip.push({:name => item.name, :url => item.url, :ip => ip})
 		  end
     end
  
