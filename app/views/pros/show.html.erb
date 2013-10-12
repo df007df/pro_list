@@ -45,5 +45,9 @@
 	</div>
 </form>
 
+
+<%if isAdmin?%>
 <%= link_to 'Edit', edit_pro_path(@pro) %> |
+<%end%>
+
 <%= link_to 'Back', pros_path %>
