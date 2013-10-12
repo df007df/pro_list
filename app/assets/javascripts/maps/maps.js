@@ -33,7 +33,6 @@ function addDrawOverlay(map, name, adress) {
 	
 	adress.content = '<div class="overlay">' + adress.text + '</div>';
 	addProList(name, adress);
-
 	delete adress.text;
 
 	map.drawOverlay(adress);
@@ -58,7 +57,7 @@ function get_pro_list() {
 
 function addProListLi(name) {
 
-	var tmp = '<a href="#" class="list-group-item" id="pro_a_' + name + '">' + 
+	var tmp = '<a href="javascript:void(0);" class="list-group-item" id="pro_a_' + name + '">' + 
 		getDropped() + ' ' +
 		name + 
 		'</a>';
@@ -67,10 +66,19 @@ function addProListLi(name) {
 
 }
 
+function addProAData(name, adress) {
+	$('#prolist #pro_a_' + name).data('adress', adress);	
+}
+
+function getProAData(name) {
+	$('#prolist #pro_a_' + name).data('adress');	
+}
+
+var map = null;
 
 $(function() {
 
-    var map = new GMaps({
+    map = new GMaps({
 		  div: '#mapsdiv',
 		  mapType: 'terrain',
 
@@ -79,8 +87,6 @@ $(function() {
 
 		  scaleControl: false,
 		  streetViewControl: false,
-
-
 
 		  lat: 36.244273,
 		  lng: 104.941406,
@@ -92,23 +98,21 @@ $(function() {
 
     var pro_list = get_pro_list();
 
-
-
     $.each(pro_list, function(k, item) {
     	var name = item.name;
-
     	addProListLi(name);
 
     	var addM = function(data) {
     		$('#prolist #pro_a_' + name).find('span.label').replaceWith(getOnline());
-
+    	
     		var adress = {
 		    	lat: data.latitude,
 		    	lng: data.longitude,
 		    	text: name + '<br/>' + data.more
 		    };
-		    addDrawOverlay(map, name, adress);	
 
+		    addProAData(name, adress);
+		    addDrawOverlay(map, name, adress);	
     	}
 
     	var bad = function() {
@@ -117,6 +121,17 @@ $(function() {
 
     	getAdress(item.url, addM, bad);
     });
+
+
+    $('#prolist a:not(.active)').off().on('click', function() {
+   		var adress = $(this).data('adress');
+   		map.setCenter(adress.lat, adress.lng);
+    })	
+
+    $('#resetCenter').click(function() {
+    	map.setCenter(36.244273, 104.941406);
+    });
+
 
     
 });
