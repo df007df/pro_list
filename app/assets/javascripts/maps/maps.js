@@ -58,8 +58,8 @@ function get_pro_list() {
 
 function addProListLi(name) {
 
-	var tmp = '<a href="#" class="list-group-item">' + 
-		getOnline() + ' ' +
+	var tmp = '<a href="#" class="list-group-item" id="pro_a_' + name + '">' + 
+		getDropped() + ' ' +
 		name + 
 		'</a>';
 
@@ -100,6 +100,8 @@ $(function() {
     	addProListLi(name);
 
     	var addM = function(data) {
+    		$('#prolist #pro_a_' + name).find('span.label').replaceWith(getOnline());
+
     		var adress = {
 		    	lat: data.latitude,
 		    	lng: data.longitude,
@@ -110,7 +112,7 @@ $(function() {
     	}
 
     	var bad = function() {
-    		
+
     	}
 
     	getAdress(item.url, addM, bad);
