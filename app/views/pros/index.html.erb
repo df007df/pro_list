@@ -1,6 +1,9 @@
 <%== renderTitle 'Listing pros'%>
 
+<%if isAdmin? %>
 <a class="btn btn-primary" href="<%= new_pro_path %>"><i class="icon-pencil icon-white"></i> 增加项目</a>
+<%end%>
+
 <br>
 <br>
 
