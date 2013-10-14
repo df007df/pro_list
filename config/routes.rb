@@ -14,6 +14,13 @@ Project::Application.routes.draw do
    get 'maps' => 'maps#index'
    get 'maps/getAdress' => 'maps#getAdress'
 
+ 
+   
+    get 'admin' => 'admin#index'
+   match ':controller(/:action(/:id))', :controller => /admin\/[^\/]+/, :via => :all
+
+   
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

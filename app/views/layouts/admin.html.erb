@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<!-- saved from url=(0026)http://demo.okendoken.com/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Light Blue - Admin Template</title>
+   	
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    params[:controller]%>		
+
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= yield :head_block %>
+  <%= javascript_include_tag  params[:controller] + '/' + params[:controller]%>
+
+
+  <%= csrf_meta_tags %>
+
+    <meta charset="utf-8">
+<style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style><style type="text/css">.jlhlebbhengjlhmcjebbkambaekglhkf {top: 0px; left: 0px;min-width: 30px;max-width: 300px;font-size: 13px;font-family: arial, helvetica, sans-serif;opacity: .93;padding:0px;position:absolute;display:block;z-index: 999997;font-style: normal;font-variant: normal;font-weight: normal;}#jlhlebbhengjlhmcjebbkambaekglhkf_up{text-align: center;padding:0px;margin: 0px;}#jlhlebbhengjlhmcjebbkambaekglhkf_cont{background-color: #729FCF;font-family: arial, helvetica, sans-serif-webkit-box-shadow: #729FCF 0px 0px 2px;color: #FFFFFF;padding:7px;-webkit-border-radius: 5px;}#jlhlebbhengjlhmcjebbkambaekglhkf_down{text-align: center;padding:0px;margin: 0px;}</style></head>
+<body class="background-dark" style="zoom: 1;">
+<div class="logo">
+    <h4><a href="http://demo.okendoken.com/index.html">Light <strong>Blue</strong></a></h4>
+</div>
+<nav id="sidebar" class="sidebar nav-collapse collapse">
+    <ul id="side-nav" class="side-nav">
+        <li class="active">
+            <a href="http://demo.okendoken.com/index.html"><i class="icon-home"></i> <span class="name">Dashboard</span></a>
+        </li>
+        <li class="panel">
+            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="http://demo.okendoken.com/#forms-collapse"><i class="icon-edit"></i> <span class="name">Forms</span></a>
+            <ul id="forms-collapse" class="panel-collapse collapse">
+                <li><a href="http://demo.okendoken.com/form_account.html">Account</a></li>
+                <li><a href="http://demo.okendoken.com/form_article.html">Article</a></li>
+                <li><a href="http://demo.okendoken.com/form_elements.html">Elements</a></li>
+                <li><a href="http://demo.okendoken.com/form_validation.html">Validation</a></li>
+                <li><a href="http://demo.okendoken.com/form_wizard.html">Wizard</a></li>
+            </ul>
+        </li>
+        <li class="panel">
+            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="http://demo.okendoken.com/#stats-collapse"><i class="icon-bar-chart"></i> <span class="name">Statistics</span></a>
+            <ul id="stats-collapse" class="panel-collapse collapse">
+                <li><a href="http://demo.okendoken.com/stat_statistics.html">Stats</a></li>
+                <li><a href="http://demo.okendoken.com/stat_charts.html">Charts</a></li>
+                <li><a href="http://demo.okendoken.com/stat_realtime.html">Realtime</a></li>
+            </ul>
+        </li>
+        <li class="panel">
+            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="http://demo.okendoken.com/#ui-collapse"><i class="icon-magic"></i> <span class="name">User Interface</span></a>
+            <ul id="ui-collapse" class="panel-collapse collapse">
+                <li><a href="http://demo.okendoken.com/ui_buttons.html">Buttons</a></li>
+                <li><a href="http://demo.okendoken.com/ui_dialogs.html">Dialogs</a></li>
+                <li><a href="http://demo.okendoken.com/ui_icons.html">Icons</a></li>
+                <li><a href="http://demo.okendoken.com/ui_tabs.html">Tabs</a></li>
+                <li><a href="http://demo.okendoken.com/ui_accordion.html">Accordion</a></li>
+            </ul>
+        </li>
+        <li class="panel">
+            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="http://demo.okendoken.com/#components-collapse"><i class="icon-bookmark-empty"></i> <span class="name">Components</span></a>
+            <ul id="components-collapse" class="panel-collapse collapse">
+                <li><a href="http://demo.okendoken.com/component_calendar.html">Calendar</a></li>
+                <li><a href="http://demo.okendoken.com/component_maps.html">Maps</a></li>
+                <li><a href="http://demo.okendoken.com/component_gallery.html">Gallery</a></li>
+                <li><a href="http://demo.okendoken.com/component_fileupload.html">Fileupload</a></li>
+            </ul>
+        </li>
+        <li class="panel">
+            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="http://demo.okendoken.com/#tables-collapse"><i class="icon-table"></i> <span class="name">Tables</span></a>
+            <ul id="tables-collapse" class="panel-collapse collapse">
+                <li><a href="http://demo.okendoken.com/tables_static.html">Static</a></li>
+                <li><a href="http://demo.okendoken.com/tables_dynamic.html">Dynamic</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="http://demo.okendoken.com/grid.html"><i class="icon-reorder"></i> <span class="name">Grid</span></a>
+        </li>
+        <li class="panel">
+            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="http://demo.okendoken.com/#special-collapse"><i class="icon-asterisk"></i> <span class="name">Special</span></a>
+            <ul id="special-collapse" class="panel-collapse collapse">
+                <li><a href="http://demo.okendoken.com/special_search.html">Search</a></li>
+                <li><a href="http://demo.okendoken.com/special_invoice.html">Invoice</a></li>
+                <li><a href="http://demo.okendoken.com/special_inbox.html">Inbox <span class="label label-important">3</span></a></li>
+                <li><a href="http://demo.okendoken.com/login.html">Login</a></li>
+                <li><a href="http://demo.okendoken.com/special_404.html">404</a></li>
+                <li><a href="http://demo.okendoken.com/landing.html">Landing</a></li>
+                <li><a href="http://demo.okendoken.com/white/index.html">White <i class="icon-external-link-sign"></i></a></li>
+            </ul>
+        </li>
+        <li class="visible-xs">
+            <a href="http://demo.okendoken.com/login.html"><i class="icon-signout"></i> <span class="name">Sign Out</span></a>
+        </li>
+    </ul>
+    <div id="sidebar-settings" class="settings">
+    
+    
+    <button type="button" data-value="icons" class="btn-icons btn btn-transparent btn-sm">Icons</button>
+    <button type="button" data-value="auto" class="btn-auto btn btn-transparent btn-sm">Auto</button>
+    
+</div>
+</nav>
+<div class="wrap">
+    <header class="page-header">
+        <div class="navbar">
+                <ul class="nav navbar-nav navbar-right pull-right">
+                    <li class="visible-phone-landscape">
+                        <a href="http://demo.okendoken.com/#" id="search-toggle">
+                            <i class="icon-search"></i>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="http://demo.okendoken.com/#" title="Messages" id="messages" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-comments"></i>
+                        </a>
+                        <ul id="messages-menu" class="dropdown-menu messages" role="menu">
+                            <li role="presentation">
+                                <a href="http://demo.okendoken.com/#" class="message">
+                                    <img src="./Light Blue - Admin Template_files/1.jpg" alt="">
+                                    <div class="details">
+                                        <div class="sender">Jane Hew</div>
+                                        <div class="text">
+                                            Hey, John! How is it going? ...
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="http://demo.okendoken.com/#" class="message">
+                                    <img src="./Light Blue - Admin Template_files/2.jpg" alt="">
+                                    <div class="details">
+                                        <div class="sender">Alies Rumiancaŭ</div>
+                                        <div class="text">
+                                            I'll definitely buy this template
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="http://demo.okendoken.com/#" class="message">
+                                    <img src="./Light Blue - Admin Template_files/3.jpg" alt="">
+                                    <div class="details">
+                                        <div class="sender">Michał Rumiancaŭ</div>
+                                        <div class="text">
+                                            Is it really Lore ipsum? Lore ...
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="http://demo.okendoken.com/#" class="text-align-center see-all">
+                                    See all messages <i class="icon-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="http://demo.okendoken.com/#" title="8 support tickets" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-group"></i>
+                            <span class="count">8</span>
+                        </a>
+                        <ul id="support-menu" class="dropdown-menu support" role="menu">
+                            <li role="presentation">
+                                <a href="http://demo.okendoken.com/#" class="support-ticket">
+                                    <div class="picture">
+                                        <span class="label label-important"><i class="icon-bell-alt"></i></span>
+                                    </div>
+                                    <div class="details">
+                                        Check out this awesome ticket
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="http://demo.okendoken.com/#" class="support-ticket">
+                                    <div class="picture">
+                                        <span class="label label-warning"><i class="icon-question-sign"></i></span>
+                                    </div>
+                                    <div class="details">
+                                        "What is the best way to get ...
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="http://demo.okendoken.com/#" class="support-ticket">
+                                    <div class="picture">
+                                        <span class="label label-success"><i class="icon-tag"></i></span>
+                                    </div>
+                                    <div class="details">
+                                        This is just a simple notification
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="http://demo.okendoken.com/#" class="support-ticket">
+                                    <div class="picture">
+                                        <span class="label label-info"><i class="icon-info-sign"></i></span>
+                                    </div>
+                                    <div class="details">
+                                        12 new orders has arrived today
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="http://demo.okendoken.com/#" class="support-ticket">
+                                    <div class="picture">
+                                        <span class="label label-important"><i class="icon-plus"></i></span>
+                                    </div>
+                                    <div class="details">
+                                        One more thing that just happened
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="http://demo.okendoken.com/#" class="text-align-center see-all">
+                                    See all tickets <i class="icon-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="hidden-xs">
+                        <a href="http://demo.okendoken.com/#" id="settings" title="" data-toggle="popover" data-placement="bottom" data-original-title="Settings">
+                            <i class="icon-cog"></i>
+                        </a>
+                    </li>
+                    <li class="hidden-xs dropdown">
+                        <a href="http://demo.okendoken.com/#" title="Account" id="account" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-user"></i>
+                        </a>
+                        <ul id="account-menu" class="dropdown-menu account" role="menu">
+                            <li role="presentation" class="account-picture">
+                                <img src="./Light Blue - Admin Template_files/2.jpg" alt="">
+                                Philip Daineka
+                            </li>
+                            <li role="presentation">
+                                <a href="http://demo.okendoken.com/form_account.html" class="link">
+                                    <i class="icon-user"></i>
+                                    Profile
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="http://demo.okendoken.com/component_calendar.html" class="link">
+                                    <i class="icon-calendar"></i>
+                                    Calendar
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="http://demo.okendoken.com/#" class="link">
+                                    <i class="icon-inbox"></i>
+                                    Inbox
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="visible-xs">
+                        <a href="http://demo.okendoken.com/#" class="btn-navbar" data-toggle="collapse" data-target=".sidebar" title="">
+                            <i class="icon-reorder"></i>
+                        </a>
+                    </li>
+                    <li class="hidden-xs"><a href="http://demo.okendoken.com/login.html"><i class="icon-signout"></i></a></li>
+                </ul>
+                <form id="search-form" class="navbar-form pull-right" role="search">
+                    <input type="search" class="search-query" placeholder="Search...">
+                </form>
+                <div class="notifications pull-right">
+                    <div class="alert pull-right">
+                        <a href="http://demo.okendoken.com/#" class="close" data-dismiss="alert">×</a>
+                        <i class="icon-info-sign"></i> Check out Light Blue <a id="notification-link" href="http://demo.okendoken.com/#">settings</a> on the right!
+                    </div>
+                </div>
+        </div>
+    </header>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="page-title">Dashboard <small>Statistics and more</small></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <section class="widget">
+                    <header>
+                        <h4>
+                            <i class="icon-group"></i>
+                            Visits
+                            <small>
+                                Based on a three months data
+                            </small>
+                        </h4>
+                    </header>
+                    <div class="body no-margin">
+                        <div id="visits-chart" class="chart visits-chart">
+                            <svg><g class="nvd3 nv-wrap nv-lineChart" transform="translate(25,28)"><g><g class="nv-x nv-axis" transform="translate(0,147)"><g class="nvd3 nv-wrap nv-axis"><g><g transform="translate(57.208546124281604,0)" style="opacity: 1;"><line class="tick" y2="6" x2="0"></line><text y="13" dy=".71em" text-anchor="middle" x="0">Aug 20</text></g><g transform="translate(192.50548099018198,0)" style="opacity: 1;"><line class="tick" y2="6" x2="0"></line><text y="13" dy=".71em" text-anchor="middle" x="0">Sep 01</text></g><g transform="translate(327.80241585608235,0)" style="opacity: 1;"><line class="tick" y2="6" x2="0"></line><text y="13" dy=".71em" text-anchor="middle" x="0">Sep 12</text></g><g transform="translate(463.0993507219827,0)" style="opacity: 1;"><line class="tick" y2="6" x2="0"></line><text y="13" dy=".71em" text-anchor="middle" x="0">Sep 24</text></g><g transform="translate(598.3962855878831,0)" style="opacity: 1;"><line class="tick" y2="6" x2="0"></line><text y="13" dy=".71em" text-anchor="middle" x="0">Oct 06</text></g><path class="domain" d="M0,6V0H678V6"></path><text class="nv-axislabel" text-anchor="middle" y="36" x="339"></text></g></g></g><g class="nv-y nv-axis"><g class="nvd3 nv-wrap nv-axis"><g><g transform="translate(0,86.41431670281995)" style="opacity: 1;"><line class="tick" x2="678" y2="0"></line><text x="-3" dy=".32em" text-anchor="end" y="0">200</text></g><g transform="translate(0,22.639913232104107)" style="opacity: 1;"><line class="tick" x2="678" y2="0"></line><text x="-3" dy=".32em" text-anchor="end" y="0">400</text></g><path class="domain" d="M0,0H0V147H0"></path><text class="nv-axislabel" text-anchor="middle" transform="rotate(-90)" y="-63" x="-73.5"></text></g></g></g><g class="nv-linesWrap"><g class="nvd3 nv-wrap nv-line" transform="translate(0,0)"><defs><clippath id="nv-edge-clip-19946"><rect width="678" height="147"></rect></clippath></defs><g clip-path=""><g class="nv-groups"><g class="nv-group nv-series-0" style="stroke-opacity: 1; fill-opacity: 0.5; fill: #eac85e; stroke: #eac85e;"><path class="nv-area" d="M0,147L23.379310344827587,147L46.758620689655174,147L70.13793103448276,147L93.51724137931035,147L116.89655172413792,147L140.27586206896552,147L163.65517241379308,147L187.0344827586207,147L210.41379310344828,147L233.79310344827584,147L257.17241379310343,147L280.55172413793105,147L303.9310344827586,147L327.31034482758616,147L350.68965517241384,147L374.0689655172414,147L397.44827586206895,147L420.82758620689657,147L444.2068965517241,147L467.5862068965517,147L490.9655172413793,147L514.3448275862069,147L537.7241379310345,147L561.1034482758621,147L584.4827586206897,147L607.8620689655172,147L631.2413793103448,147L654.6206896551723,147L678,147L678,145.7245119305857L654.6206896551723,144.1301518438178L631.2413793103448,144.76789587852494L607.8620689655172,147L584.4827586206897,145.08676789587852L561.1034482758621,145.08676789587852L537.7241379310345,146.36225596529283L514.3448275862069,145.4056399132321L490.9655172413793,146.68112798264642L467.5862068965517,146.68112798264642L444.2068965517241,144.76789587852494L420.82758620689657,144.44902386117136L397.44827586206895,144.76789587852494L374.0689655172414,147L350.68965517241384,144.1301518438178L327.31034482758616,143.49240780911063L303.9310344827586,138.70932754880695L280.55172413793105,110.0108459869848L257.17241379310343,48.78741865509761L233.79310344827584,0L210.41379310344828,11.798264642082444L187.0344827586207,58.67245119305858L163.65517241379308,85.45770065075922L140.27586206896552,96.6182212581345L116.89655172413792,116.06941431670282L93.51724137931035,132.33188720173536L70.13793103448276,138.07158351409979L46.758620689655174,138.07158351409979L23.379310344827587,130.41865509761388L0,115.43167028199566Z"></path><path class="nv-line" d="M0,115.43167028199566L23.379310344827587,130.41865509761388L46.758620689655174,138.07158351409979L70.13793103448276,138.07158351409979L93.51724137931035,132.33188720173536L116.89655172413792,116.06941431670282L140.27586206896552,96.6182212581345L163.65517241379308,85.45770065075922L187.0344827586207,58.67245119305858L210.41379310344828,11.798264642082444L233.79310344827584,0L257.17241379310343,48.78741865509761L280.55172413793105,110.0108459869848L303.9310344827586,138.70932754880695L327.31034482758616,143.49240780911063L350.68965517241384,144.1301518438178L374.0689655172414,147L397.44827586206895,144.76789587852494L420.82758620689657,144.44902386117136L444.2068965517241,144.76789587852494L467.5862068965517,146.68112798264642L490.9655172413793,146.68112798264642L514.3448275862069,145.4056399132321L537.7241379310345,146.36225596529283L561.1034482758621,145.08676789587852L584.4827586206897,145.08676789587852L607.8620689655172,147L631.2413793103448,144.76789587852494L654.6206896551723,144.1301518438178L678,145.7245119305857"></path></g><g class="nv-group nv-series-1" style="stroke-opacity: 1; fill-opacity: 0.5; fill: #cf6d51; stroke: #cf6d51;"><path class="nv-line" d="M0,144.76789587852494L23.379310344827587,144.1301518438178L46.758620689655174,145.4056399132321L70.13793103448276,146.04338394793928L93.51724137931035,144.1301518438178L116.89655172413792,147L140.27586206896552,144.1301518438178L163.65517241379308,144.1301518438178L187.0344827586207,145.7245119305857L210.41379310344828,146.68112798264642L233.79310344827584,145.08676789587852L257.17241379310343,146.68112798264642L280.55172413793105,144.76789587852494L303.9310344827586,146.68112798264642L327.31034482758616,146.36225596529283L350.68965517241384,145.7245119305857L374.0689655172414,144.44902386117136L397.44827586206895,146.36225596529283L420.82758620689657,145.7245119305857L444.2068965517241,145.4056399132321L467.5862068965517,141.26030368763557L490.9655172413793,114.15618221258134L514.3448275862069,112.88069414316703L537.7241379310345,140.62255965292843L561.1034482758621,145.08676789587852L584.4827586206897,144.44902386117136L607.8620689655172,145.4056399132321L631.2413793103448,144.76789587852494L654.6206896551723,144.76789587852494L678,146.36225596529283"></path></g></g><g class="nv-scatterWrap" clip-path=""><g class="nvd3 nv-wrap nv-scatter nv-chart-19946" transform="translate(0,0)"><defs><clippath id="nv-edge-clip-19946"><rect width="678" height="147"></rect></clippath><clippath class="nv-point-clips" id="nv-points-clip-19946"><circle r="25" cx="0" cy="115.43167028211093"></circle><circle r="25" cx="23.379310344832618" cy="130.4186550976531"></circle><circle r="25" cx="46.758620689674196" cy="138.07158351411925"></circle><circle r="25" cx="70.13793103454506" cy="138.0715835141029"></circle><circle r="25" cx="93.51724137936483" cy="132.33188720185257"></circle><circle r="25" cx="116.8965517241596" cy="116.06941431680328"></circle><circle r="25" cx="140.27586206909643" cy="96.61822125814889"></circle><circle r="25" cx="163.6551724138803" cy="85.4577006508349"></circle><circle r="25" cx="187.03448275876207" cy="58.67245119309076"></circle><circle r="25" cx="210.41379310345548" cy="11.798264642088736"></circle><circle r="25" cx="233.79310344841335" cy="0"></circle><circle r="25" cx="257.1724137932352" cy="48.78741865512526"></circle><circle r="25" cx="280.5517241380679" cy="110.01084598702585"></circle><circle r="25" cx="303.93103448276287" cy="138.70932754893227"></circle><circle r="25" cx="327.31034482772964" cy="143.49240780922526"></circle><circle r="25" cx="350.68965517246625" cy="144.13015184386484"></circle><circle r="25" cx="374.0689655174571" cy="147.000000000027"></circle><circle r="25" cx="397.44827586235306" cy="144.7678958786679"></circle><circle r="25" cx="420.82758620712167" cy="144.44902386120725"></circle><circle r="25" cx="444.2068965519334" cy="144.7678958785644"></circle><circle r="25" cx="467.58620689691134" cy="146.6811279827691"></circle><circle r="25" cx="490.96551724158905" cy="146.6811279827428"></circle><circle r="25" cx="514.3448275862231" cy="145.40563991330657"></circle><circle r="25" cx="537.7241379314098" cy="146.36225596540862"></circle><circle r="25" cx="561.1034482763046" cy="145.08676789596586"></circle><circle r="25" cx="584.4827586209179" cy="145.08676789596237"></circle><circle r="25" cx="607.8620689655697" cy="147.0000000000104"></circle><circle r="25" cx="631.2413793106663" cy="144.76789587854287"></circle><circle r="25" cx="654.6206896551926" cy="144.13015184388524"></circle><circle r="25" cx="678.0000000001013" cy="145.72451193069443"></circle><circle r="25" cx="0" cy="144.76789587861137"></circle><circle r="25" cx="23.379310344829857" cy="144.13015184395857"></circle><circle r="25" cx="46.75862068967804" cy="145.40563991324962"></circle><circle r="25" cx="70.13793103448353" cy="146.04338394801698"></circle><circle r="25" cx="93.5172413793211" cy="144.13015184389744"></circle><circle r="25" cx="116.89655172414056" cy="147.0000000000376"></circle><circle r="25" cx="140.27586206902527" cy="144.13015184393586"></circle><circle r="25" cx="163.65517241385854" cy="144.1301518438344"></circle><circle r="25" cx="187.03448275866003" cy="145.7245119306493"></circle><circle r="25" cx="210.4137931035914" cy="146.6811279827159"></circle><circle r="25" cx="233.79310344849384" cy="145.08676789598425"></circle><circle r="25" cx="257.1724137931858" cy="146.68112798275956"></circle><circle r="25" cx="280.55172413795066" cy="144.76789587853082"></circle><circle r="25" cx="303.9310344828904" cy="146.68112798267114"></circle><circle r="25" cx="327.310344827719" cy="146.36225596536417"></circle><circle r="25" cx="350.6896551726944" cy="145.72451193061693"></circle><circle r="25" cx="374.06896551752067" cy="144.44902386127487"></circle><circle r="25" cx="397.4482758624568" cy="146.3622559653712"></circle><circle r="25" cx="420.82758620704493" cy="145.72451193062415"></circle><circle r="25" cx="444.2068965519169" cy="145.4056399132684"></circle><circle r="25" cx="467.5862068966963" cy="141.26030368775372"></circle><circle r="25" cx="490.9655172418683" cy="114.15618221268109"></circle><circle r="25" cx="514.3448275865325" cy="112.88069414325456"></circle><circle r="25" cx="537.7241379312609" cy="140.62255965304914"></circle><circle r="25" cx="561.1034482759012" cy="145.08676789594278"></circle><circle r="25" cx="584.482758621236" cy="144.44902386125645"></circle><circle r="25" cx="607.8620689655658" cy="145.4056399132481"></circle><circle r="25" cx="631.2413793106336" cy="144.76789587857039"></circle><circle r="25" cx="654.6206896557235" cy="144.7678958786229"></circle><circle r="25" cx="678.000000000072" cy="146.36225596532205"></circle></clippath></defs><g clip-path=""><g class="nv-groups"><g class="nv-group nv-series-0" style="stroke-opacity: 1; fill-opacity: 0.5; stroke: #eac85e; fill: #eac85e;"><circle cx="0" cy="115.43167028199566" r="2.256758334191025" class="nv-point nv-point-0"></circle><circle cx="23.379310344827587" cy="130.41865509761388" r="2.256758334191025" class="nv-point nv-point-1"></circle><circle cx="46.758620689655174" cy="138.07158351409979" r="2.256758334191025" class="nv-point nv-point-2"></circle><circle cx="70.13793103448276" cy="138.07158351409979" r="2.256758334191025" class="nv-point nv-point-3"></circle><circle cx="93.51724137931035" cy="132.33188720173536" r="2.256758334191025" class="nv-point nv-point-4"></circle><circle cx="116.89655172413792" cy="116.06941431670282" r="2.256758334191025" class="nv-point nv-point-5"></circle><circle cx="140.27586206896552" cy="96.6182212581345" r="2.256758334191025" class="nv-point nv-point-6"></circle><circle cx="163.65517241379308" cy="85.45770065075922" r="2.256758334191025" class="nv-point nv-point-7"></circle><circle cx="187.0344827586207" cy="58.67245119305858" r="2.256758334191025" class="nv-point nv-point-8"></circle><circle cx="210.41379310344828" cy="11.798264642082444" r="2.256758334191025" class="nv-point nv-point-9"></circle><circle cx="233.79310344827584" cy="0" r="2.256758334191025" class="nv-point nv-point-10"></circle><circle cx="257.17241379310343" cy="48.78741865509761" r="2.256758334191025" class="nv-point nv-point-11"></circle><circle cx="280.55172413793105" cy="110.0108459869848" r="2.256758334191025" class="nv-point nv-point-12"></circle><circle cx="303.9310344827586" cy="138.70932754880695" r="2.256758334191025" class="nv-point nv-point-13"></circle><circle cx="327.31034482758616" cy="143.49240780911063" r="2.256758334191025" class="nv-point nv-point-14"></circle><circle cx="350.68965517241384" cy="144.1301518438178" r="2.256758334191025" class="nv-point nv-point-15"></circle><circle cx="374.0689655172414" cy="147" r="2.256758334191025" class="nv-point nv-point-16"></circle><circle cx="397.44827586206895" cy="144.76789587852494" r="2.256758334191025" class="nv-point nv-point-17"></circle><circle cx="420.82758620689657" cy="144.44902386117136" r="2.256758334191025" class="nv-point nv-point-18"></circle><circle cx="444.2068965517241" cy="144.76789587852494" r="2.256758334191025" class="nv-point nv-point-19"></circle><circle cx="467.5862068965517" cy="146.68112798264642" r="2.256758334191025" class="nv-point nv-point-20"></circle><circle cx="490.9655172413793" cy="146.68112798264642" r="2.256758334191025" class="nv-point nv-point-21"></circle><circle cx="514.3448275862069" cy="145.4056399132321" r="2.256758334191025" class="nv-point nv-point-22"></circle><circle cx="537.7241379310345" cy="146.36225596529283" r="2.256758334191025" class="nv-point nv-point-23"></circle><circle cx="561.1034482758621" cy="145.08676789587852" r="2.256758334191025" class="nv-point nv-point-24"></circle><circle cx="584.4827586206897" cy="145.08676789587852" r="2.256758334191025" class="nv-point nv-point-25"></circle><circle cx="607.8620689655172" cy="147" r="2.256758334191025" class="nv-point nv-point-26"></circle><circle cx="631.2413793103448" cy="144.76789587852494" r="2.256758334191025" class="nv-point nv-point-27"></circle><circle cx="654.6206896551723" cy="144.1301518438178" r="2.256758334191025" class="nv-point nv-point-28"></circle><circle cx="678" cy="145.7245119305857" r="2.256758334191025" class="nv-point nv-point-29"></circle></g><g class="nv-group nv-series-1" style="stroke-opacity: 1; fill-opacity: 0.5; stroke: #cf6d51; fill: #cf6d51;"><circle cx="0" cy="144.76789587852494" r="2.256758334191025" class="nv-point nv-point-0"></circle><circle cx="23.379310344827587" cy="144.1301518438178" r="2.256758334191025" class="nv-point nv-point-1"></circle><circle cx="46.758620689655174" cy="145.4056399132321" r="2.256758334191025" class="nv-point nv-point-2"></circle><circle cx="70.13793103448276" cy="146.04338394793928" r="2.256758334191025" class="nv-point nv-point-3"></circle><circle cx="93.51724137931035" cy="144.1301518438178" r="2.256758334191025" class="nv-point nv-point-4"></circle><circle cx="116.89655172413792" cy="147" r="2.256758334191025" class="nv-point nv-point-5"></circle><circle cx="140.27586206896552" cy="144.1301518438178" r="2.256758334191025" class="nv-point nv-point-6"></circle><circle cx="163.65517241379308" cy="144.1301518438178" r="2.256758334191025" class="nv-point nv-point-7"></circle><circle cx="187.0344827586207" cy="145.7245119305857" r="2.256758334191025" class="nv-point nv-point-8"></circle><circle cx="210.41379310344828" cy="146.68112798264642" r="2.256758334191025" class="nv-point nv-point-9"></circle><circle cx="233.79310344827584" cy="145.08676789587852" r="2.256758334191025" class="nv-point nv-point-10"></circle><circle cx="257.17241379310343" cy="146.68112798264642" r="2.256758334191025" class="nv-point nv-point-11"></circle><circle cx="280.55172413793105" cy="144.76789587852494" r="2.256758334191025" class="nv-point nv-point-12"></circle><circle cx="303.9310344827586" cy="146.68112798264642" r="2.256758334191025" class="nv-point nv-point-13"></circle><circle cx="327.31034482758616" cy="146.36225596529283" r="2.256758334191025" class="nv-point nv-point-14"></circle><circle cx="350.68965517241384" cy="145.7245119305857" r="2.256758334191025" class="nv-point nv-point-15"></circle><circle cx="374.0689655172414" cy="144.44902386117136" r="2.256758334191025" class="nv-point nv-point-16"></circle><circle cx="397.44827586206895" cy="146.36225596529283" r="2.256758334191025" class="nv-point nv-point-17"></circle><circle cx="420.82758620689657" cy="145.7245119305857" r="2.256758334191025" class="nv-point nv-point-18"></circle><circle cx="444.2068965517241" cy="145.4056399132321" r="2.256758334191025" class="nv-point nv-point-19"></circle><circle cx="467.5862068965517" cy="141.26030368763557" r="2.256758334191025" class="nv-point nv-point-20"></circle><circle cx="490.9655172413793" cy="114.15618221258134" r="2.256758334191025" class="nv-point nv-point-21"></circle><circle cx="514.3448275862069" cy="112.88069414316703" r="2.256758334191025" class="nv-point nv-point-22"></circle><circle cx="537.7241379310345" cy="140.62255965292843" r="2.256758334191025" class="nv-point nv-point-23"></circle><circle cx="561.1034482758621" cy="145.08676789587852" r="2.256758334191025" class="nv-point nv-point-24"></circle><circle cx="584.4827586206897" cy="144.44902386117136" r="2.256758334191025" class="nv-point nv-point-25"></circle><circle cx="607.8620689655172" cy="145.4056399132321" r="2.256758334191025" class="nv-point nv-point-26"></circle><circle cx="631.2413793103448" cy="144.76789587852494" r="2.256758334191025" class="nv-point nv-point-27"></circle><circle cx="654.6206896551723" cy="144.76789587852494" r="2.256758334191025" class="nv-point nv-point-28"></circle><circle cx="678" cy="146.36225596529283" r="2.256758334191025" class="nv-point nv-point-29"></circle></g></g><g class="nv-point-paths" clip-path="url(#nv-points-clip-19946)"><path class="nv-path-0" d="M-10,-10.000000000000004L-10,130.09978308036116L7.090463611012709,130.09978308036116L58.81015937390404,49.418389653779656L58.9561857490016,22.65219697912809L54.57695446625529,-10.000000000000004Z"></path><path class="nv-path-1" d="M7.090463611012709,130.09978308036116L11.493944893221865,137.27440347080343L34.077366769243454,137.27440347080798L58.44827586205704,62.82250531364323L59.69658791701905,55.19544457243722L58.81015937390404,49.418389653779656Z"></path><path class="nv-path-2" d="M34.07736676924346,137.27440347080798L35.23423197523955,141.73861171369046L58.4482758621122,141.7386117136783L58.44827586205704,62.82250531364323Z"></path><path class="nv-path-3" d="M64.90126861014829,66.25633989408851L59.69658791701902,55.19544457243722L58.44827586205704,62.82250531364323L58.44827586211219,141.7386117136783L58.54830556035537,142.05748373097052L81.57968651990862,142.0574837311483L82.57128526793426,138.23101952283443Z"></path><path class="nv-path-4" d="M64.90126861014829,66.25633989408851L82.57128526793426,138.2310195228344L106.107163836069,138.23101952292166L110.30841116312683,131.53470715841638Z"></path><path class="nv-path-5" d="M58.95618574900161,22.65219697912809L58.81015937390403,49.418389653779656L59.69658791701902,55.19544457243722L64.90126861014829,66.25633989408851L110.30841116312683,131.53470715841638L126.86395643959541,131.53470715842658L140.25923777212358,120.3741865510424Z"></path><path class="nv-path-6" d="M119.7396610352501,23.530510372099272L92.52882765356881,-10L54.57695446625528,-10L58.9561857490016,22.65219697912809L140.25923777212358,120.37418655104234L151.9655172413388,120.37418655105989L163.30584064228358,114.79392624733451Z"></path><path class="nv-path-7" d="M119.7396610352501,23.530510372099272L163.30584064228358,114.79392624733451L177.39978551801647,114.79392624733975L200.37397172019124,105.88154781328609L207.68798289303638,100.29556399866739Z"></path><path class="nv-path-8" d="M108.02981998636555,-10L92.52882765356881,-10.000000000000002L119.7396610352501,23.530510372099272L207.68798289303638,100.29556399866739L218.79334863698688,97.3454481499621L227.58038370381564,92.59080036295413L221.06749905509102,46.37949528395801Z"></path><path class="nv-path-9" d="M214.0800220954559,-10.000000000000004L108.0298199863656,-9.999999999999998L221.06749905509102,46.37949528395801L234.17194808631893,29.813937677969516Z"></path><path class="nv-path-10" d="M214.08002209545612,-10L234.1719480863189,29.81393767796952L317.25477718415755,-10.000000000000007Z"></path><path class="nv-path-11" d="M317.2547771841576,-10L234.17194808631893,29.813937677969516L221.06749905509102,46.37949528395801L227.58038370381564,92.59080036295413L231.69873981532194,93.59064435359463L354.76938517976885,46.59381752265011L363.8330425996809,37.70369857631516L387.6130352731521,8.645027257063097L399.14296204442843,-8.206008122430447L399.6445637988822,-10Z"></path><path class="nv-path-12" d="M231.69873981532194,93.59064435359463L247.60307017781977,114.79221255961181L267.3616234915374,127.38937093273384L288.5228840054517,127.38937093280525L324.40646758746976,98.1566941086287L340.872655397038,75.16086631298982L354.7693851797689,46.59381752264999Z"></path><path class="nv-path-13" d="M288.5228840054517,127.38937093280524L292.48927899740005,142.69522776598478L315.29450585661357,142.6952277656199L324.4064675874699,98.15669410862864Z"></path><path class="nv-path-14" d="M324.4064675874699,98.15669410862864L315.29450585661357,142.6952277656199L315.59894406872917,144.92733188725134L338.9695561788892,144.9273318873379L340.8726553970381,75.16086631298982Z"></path><path class="nv-path-15" d="M340.8726553970381,75.16086631298982L338.9695561788892,144.9273318873379L338.96955617904007,144.92733188891813L362.3706121103838,144.92733188556923L363.8330425996812,37.703698576315L354.7693851797689,46.59381752264999Z"></path><path class="nv-path-16" d="M362.4141032836157,145.7245119303606L361.79895466299683,157L386.04010029633963,157.00000000000023L385.7325259860729,145.72451193094153Z"></path><path class="nv-path-17" d="M387.6130352731521,8.645027257063097L385.7455733379777,145.565075922781L409.1248836827833,145.5650759212598L409.14445471070286,145.0867678952128L407.39762845771645,17.011581454613307L399.14296204442843,-8.206008122430447Z"></path><path class="nv-path-18" d="M407.39762845771645,17.011581454613307L409.1444547107029,145.0867678952128L432.51071770351683,145.08676789661862L433.4353016447943,77.2973924554237Z"></path><path class="nv-path-19" d="M433.4353016447943,77.2973924554237L432.510717703558,145.08676789561304L455.9487411321921,145.08676789622095L456.04007259580703,143.97071583571943L449.7835679551291,102.2689569906997Z"></path><path class="nv-path-20" d="M456.04007259580703,143.97071583571943L455.9487411321921,145.08676789622095L455.2987995730384,157L479.2758620692619,157L479.27586206924724,143.9707158347977Z"></path><path class="nv-path-21" d="M482.4180993297748,130.41865509763855L479.27586206924724,143.9707158347977L479.2758620692619,157L503.25292456526057,157L501.8027454200019,130.418655097805Z"></path><path class="nv-path-22" d="M503.5075994080965,129.1431670281775L501.8027454200019,130.41865509780496L503.25292456526057,157L525.5796449693263,157L526.1323378984106,143.49240780952962L523.1966837102776,129.14316702836476Z"></path><path class="nv-path-23" d="M526.1323378984106,143.49240780952962L525.5796449693263,157L550.0289417242914,157L549.2920178187929,143.4924078089287Z"></path><path class="nv-path-24" d="M560.4218287391466,157L572.7931034486131,157L572.7931034486113,144.7678958727788L571.0429826286768,80.60952580034284L564.2262820801564,90.50640170491316Z"></path><path class="nv-path-25" d="M572.7931034486113,144.7678958727788L572.7931034486131,157L595.2757855662595,157L596.1593664412973,146.20281995665846L596.178937469134,144.76789588444325Z"></path><path class="nv-path-26" d="M596.1593664412973,146.20281995665846L595.2757855662595,157L620.6130123135285,157L619.582167959307,146.20281995660002Z"></path><path class="nv-path-27" d="M615.3212460090616,-10L619.1519258200324,130.4304035157168L641.5555576987659,157L642.931034483153,157L642.9310344831961,144.4490238709856L638.7179528233485,-10Z"></path><path class="nv-path-28" d="M638.7179528233485,-9.999999999999986L642.9310344831961,144.4490238709856L666.3429632081817,144.44902385149535L676.8756673573906,-9.999999999999972Z"></path><path class="nv-path-29" d="M688,-10.000000000000057L676.8756673573906,-10.000000000000057L666.3429632081817,144.44902385149535L666.2777264480666,146.0433839474691L688,146.04338394846815Z"></path><path class="nv-path-30" d="M-10.000000000000004,130.09978308036116L-10.000000000000004,157L12.032022421212133,157L11.49394489322188,137.27440347080346L7.090463611012723,130.09978308036116Z"></path><path class="nv-path-31" d="M11.493944893221865,137.27440347080343L12.032022421212119,157L34.40162748892736,157L35.23423197523956,141.73861171369046L34.077366769243454,137.27440347080798Z"></path><path class="nv-path-32" d="M35.23423197523957,141.73861171369046L34.40162748892736,157L58.140701551749316,156.99999999999955L58.548305560355374,142.05748373097052L58.4482758621122,141.7386117136783Z"></path><path class="nv-path-33" d="M58.54830556035537,142.05748373097052L58.1407015517493,157L82.80249854559392,157L81.57968651990865,142.0574837311483Z"></path><path class="nv-path-34" d="M82.57128526793426,138.2310195228344L81.57968651990863,142.0574837311483L82.80249854559392,157L103.80324112747165,157L106.10716383606898,138.23101952292166Z"></path><path class="nv-path-35" d="M110.30841116312683,131.53470715841638L106.107163836069,138.23101952292166L103.80324112747167,157L129.98986232081702,157L126.86395643959541,131.53470715842658Z"></path><path class="nv-path-36" d="M140.25923777212358,120.37418655104234L126.86395643959541,131.53470715842658L129.98986232081702,157L151.96551724149776,157L151.9655172413388,120.37418655105988Z"></path><path class="nv-path-37" d="M163.30584064228358,114.79392624733451L151.9655172413388,120.37418655105988L151.96551724149776,157L174.52152784403123,157L177.39978551801647,114.79392624733975Z"></path><path class="nv-path-38" d="M177.39978551801647,114.79392624733975L174.52152784403123,157L198.2823474935934,157.0000000000001L200.37397172019132,105.88154781328608Z"></path><path class="nv-path-39" d="M207.68798289303638,100.29556399866732L200.37397172019132,105.88154781328608L198.2823474935934,157L222.8615112584862,157L218.79334863698688,97.34544814996207Z"></path><path class="nv-path-40" d="M231.69873981532194,93.59064435359467L227.58038370381567,92.59080036295413L218.79334863698688,97.3454481499621L222.8615112584862,157L244.7246956383702,157L247.6030701778198,114.79221255961183Z"></path><path class="nv-path-41" d="M247.60307017781977,114.79221255961181L244.7246956383702,157L269.7847918965279,156.99999999999997L267.3616234915374,127.38937093273385Z"></path><path class="nv-path-42" d="M267.3616234915374,127.38937093273385L269.7847918965279,157L291.31865637950676,156.99999999999997L292.48927899740005,142.69522776598478L288.5228840054517,127.38937093280525Z"></path><path class="nv-path-43" d="M292.48927899740005,142.69522776598478L291.31865637950676,157L315.76360401714555,157L315.59894406872917,144.92733188725134L315.29450585661357,142.6952277656199Z"></path><path class="nv-path-44" d="M315.59894406872917,144.92733188725134L315.76360401714555,157L339.2988760758941,157L338.96955617904007,144.92733188891813L338.96955617888926,144.9273318873379Z"></path><path class="nv-path-45" d="M338.96955617904,144.92733188891813L339.29887607589404,157L361.7989546629967,157L362.4141032836156,145.7245119303606L362.3706121103838,144.92733188556923Z"></path><path class="nv-path-46" d="M363.8330425996812,37.703698576315L362.37061211038366,144.92733188556923L362.41410328361553,145.7245119303606L385.73252598607303,145.72451193094153L385.74557333797776,145.565075922781L387.6130352731521,8.645027257063097Z"></path><path class="nv-path-47" d="M385.7455733379778,145.565075922781L385.73252598607303,145.72451193094153L386.04010029633974,157L409.43680711044294,157L409.1248836827833,145.5650759212598Z"></path><path class="nv-path-48" d="M409.1444547107029,145.0867678952128L409.1248836827833,145.5650759212598L409.43680711044294,157L432.6732030932908,157L432.51071770351683,145.08676789661862Z"></path><path class="nv-path-49" d="M432.510717703558,145.08676789561304L432.6732030933437,157L455.2987995730384,157L455.9487411321921,145.08676789622095Z"></path><path class="nv-path-50" d="M449.7835679551292,102.26895699069979L456.040072595807,143.97071583571943L479.27586206924724,143.9707158347977L482.4180993297748,130.41865509763855Z"></path><path class="nv-path-51" d="M495.91646661289116,-10.000000000000028L399.6445637988822,-10L399.14296204442843,-8.206008122430447L407.39762845771645,17.011581454613307L433.4353016447941,77.2973924554237L449.7835679551291,102.2689569906997L482.4180993297746,130.41865509763846L501.8027454200019,130.418655097805L503.5075994080965,129.14316702817752Z"></path><path class="nv-path-52" d="M495.91646661289116,-9.999999999999943L503.5075994080965,129.1431670281775L523.1966837102774,129.14316702836481L557.5620150459724,100.181965911123L564.2262820801564,90.50640170491316L571.0429826286767,80.60952580034284L601.5802323063069,12.76242932701298L609.4969198447441,-10.000000000000005Z"></path><path class="nv-path-53" d="M523.1966837102776,129.14316702836476L526.1323378984106,143.49240780952962L549.2920178187928,143.4924078089287L557.5620150459727,100.181965911123Z"></path><path class="nv-path-54" d="M557.5620150459727,100.181965911123L549.2920178187928,143.4924078089287L550.0289417242913,157L560.4218287391465,157L564.2262820801562,90.50640170491316Z"></path><path class="nv-path-55" d="M571.0429826286768,80.60952580034284L572.7931034486113,144.7678958727788L596.178937469134,144.76789588444325L601.5802323063069,12.76242932701298Z"></path><path class="nv-path-56" d="M609.4969198447441,-10L601.5802323063069,12.76242932701298L596.1789374691341,144.76789588444325L596.1593664412973,146.20281995665846L619.582167959307,146.20281995660002L619.1519258200325,130.4304035157168L615.3212460090617,-10Z"></path><path class="nv-path-57" d="M641.5555576987659,157L619.1519258200325,130.4304035157168L619.582167959307,146.2028199566L620.6130123135285,157Z"></path><path class="nv-path-58" d="M642.931034483196,144.4490238709856L642.931034483153,157L665.5305362588716,157L666.2777264480666,146.0433839474691L666.3429632081817,144.44902385149535Z"></path><path class="nv-path-59" d="M688,146.04338394846815L666.2777264480667,146.0433839474691L665.5305362588717,157L688,157Z"></path></g></g></g></g></g></g></g><g class="nv-legendWrap" transform="translate(0,-28)"><g class="nvd3 nv-legend" transform="translate(0,3)"><g transform="translate(549,3)"><g class="nv-series" transform="translate(0,5)"><circle r="5" style="stroke-width: 2px; fill: #eac85e; stroke: #eac85e;"></circle><text text-anchor="start" dy=".32em" dx="8">Unique</text></g><g class="nv-series" transform="translate(71,5)"><circle r="5" style="stroke-width: 2px; fill: #cf6d51; stroke: #cf6d51;"></circle><text text-anchor="start" dy=".32em" dx="8">Visits</text></g></g></g></g></g></g></svg>
+                        </div>
+                        <div class="visits-info well well-sm">
+                            <div class="row">
+                                <div class="col-sm-3 col-xs-6">
+                                    <div class="key"><i class="eicon-users"></i> Total Traffic</div>
+                                    <div class="value">24 541 <i class="icon-caret-up color-green"></i></div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <div class="key"><i class="eicon-user"></i> Unique Visits</div>
+                                    <div class="value">14 778 <i class="icon-caret-down color-red"></i></div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <div class="key"><i class="icon-plus-sign-alt"></i> Revenue</div>
+                                    <div class="value">$3 583.18 <i class="icon-caret-up color-green"></i></div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <div class="key"><i class="icon-user"></i> Total Sales</div>
+                                    <div class="value">$59 871.12 <i class="icon-caret-down color-red"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="widget">
+                    <header>
+                        <h4>
+                            <i class="icon-shopping-cart"></i>
+                            Traffic Sources
+                            <small>
+                                One month tracking
+                            </small>
+                        </h4>
+                    </header>
+                    <div class="body">
+                        <table class="table table-striped no-margin sources-table">
+                            <thead>
+                            <tr>
+                                <th class="source-col-header">Source</th>
+                                <th>Amount</th>
+                                <th>Change</th>
+                                <th class="hidden-xs">Percent.,%</th>
+                                <th>Target</th>
+                                <th class="chart-col-header hidden-xs">Trend</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><span class="label label-important">Direct</span></td>
+                                <td>713</td>
+                                <td><strong class="color-green">+53</strong></td>
+                                <td class="hidden-xs">+12</td>
+                                <td>900</td>
+                                <td class="chart-cell hidden-xs">
+                                    <div id="direct-trend"><canvas width="150" height="30" style="display: inline-block; width: 150px; height: 30px; vertical-align: top;"></canvas></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="label label-warning">Refer</span></td>
+                                <td>562</td>
+                                <td><strong>+84</strong></td>
+                                <td class="hidden-xs">+64</td>
+                                <td>500</td>
+                                <td class="chart-cell hidden-xs">
+                                    <div id="refer-trend"><canvas width="150" height="30" style="display: inline-block; width: 150px; height: 30px; vertical-align: top;"></canvas></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="label label-success">Social</span></td>
+                                <td>148</td>
+                                <td><strong class="color-red">-12</strong></td>
+                                <td class="hidden-xs">+3</td>
+                                <td>180</td>
+                                <td class="chart-cell hidden-xs">
+                                    <div id="social-trend"><canvas width="150" height="30" style="display: inline-block; width: 150px; height: 30px; vertical-align: top;"></canvas></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="label label-info">Search</span></td>
+                                <td>653</td>
+                                <td><strong class="color-green">+23</strong></td>
+                                <td class="hidden-xs">+43</td>
+                                <td>876</td>
+                                <td class="chart-cell hidden-xs">
+                                    <div id="search-trend"><canvas width="150" height="30" style="display: inline-block; width: 150px; height: 30px; vertical-align: top;"></canvas></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="label label-inverse">Internal</span></td>
+                                <td>976</td>
+                                <td><strong>+101</strong></td>
+                                <td class="hidden-xs">-7</td>
+                                <td>844</td>
+                                <td class="chart-cell hidden-xs">
+                                    <div id="internal-trend"><canvas width="150" height="30" style="display: inline-block; width: 150px; height: 30px; vertical-align: top;"></canvas></div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section class="widget large">
+                    <header>
+                        <h4>
+                            <i class="eicon-chat"></i>
+                            Chat
+                        </h4>
+                    </header>
+                    <div class="body">
+                        <div id="chat" class="chat">
+                            <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 240px;"><div id="chat-messages" class="chat-messages" style="overflow: hidden; width: auto; height: 240px;">
+                                <div class="chat-message">
+                                    <div class="sender pull-left">
+                                        <div class="icon">
+                                            <img src="./Light Blue - Admin Template_files/2.jpg" class="img-circle" alt="">
+                                        </div>
+                                        <div class="time">
+                                            4 min
+                                        </div>
+                                    </div>
+                                    <div class="chat-message-body">
+                                        <span class="arrow"></span>
+                                        <div class="sender"><a href="http://demo.okendoken.com/#">Tikhon Laninga</a></div>
+                                        <div class="text">
+                                            Hey Sam, how is it going? But I must explain to you how all this mistaken
+                                            idea of denouncing of a pleasure and praising pain was born
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chat-message">
+                                    <div class="sender pull-right">
+                                        <div class="icon">
+                                            <img src="./Light Blue - Admin Template_files/1.jpg" class="img-circle" alt="">
+                                        </div>
+                                        <div class="time">
+                                            3 min
+                                        </div>
+                                    </div>
+                                    <div class="chat-message-body on-left">
+                                        <span class="arrow"></span>
+                                        <div class="sender"><a href="http://demo.okendoken.com/#">Cenhelm Houston</a></div>
+                                        <div class="text">
+                                            Pretty good. Doing my homework..  No one rejects, dislikes, or avoids
+                                            pleasure itself, because it is pleasure, but because
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chat-message">
+                                    <div class="sender pull-left">
+                                        <div class="icon">
+                                            <img src="./Light Blue - Admin Template_files/2.jpg" class="img-circle" alt="">
+                                        </div>
+                                        <div class="time">
+                                            2 min
+                                        </div>
+                                    </div>
+                                    <div class="chat-message-body">
+                                        <span class="arrow"></span>
+                                        <div class="sender"><a href="http://demo.okendoken.com/#">Tikhon Laninga</a></div>
+                                        <div class="text">
+                                            Any chance to go out? To take a trivial example, which of us ever undertakes
+                                            laborious physical exercise, except to obtain some advantage
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chat-message">
+                                    <div class="sender pull-right">
+                                        <div class="icon">
+                                            <img src="./Light Blue - Admin Template_files/1.jpg" class="img-circle" alt="">
+                                        </div>
+                                        <div class="time">
+                                            2 min
+                                        </div>
+                                    </div>
+                                    <div class="chat-message-body on-left">
+                                        <span class="arrow"></span>
+                                        <div class="sender"><a href="http://demo.okendoken.com/#">Cenhelm Houston</a></div>
+                                        <div class="text">
+                                            .. Maybe 40-50 mins. I don't know exactly. On the other hand, we denounce
+                                            with righteous indignation and dislike men who are so beguiled
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chat-message">
+                                    <div class="sender pull-left">
+                                        <div class="icon">
+                                            <img src="./Light Blue - Admin Template_files/2.jpg" class="img-circle" alt="">
+                                        </div>
+                                        <div class="time">
+                                            1 min
+                                        </div>
+                                    </div>
+                                    <div class="chat-message-body">
+                                        <span class="arrow"></span>
+                                        <div class="sender"><a href="http://demo.okendoken.com/#">Tikhon Laninga</a></div>
+                                        <div class="text">
+                                            Anyway sounds great! These cases are perfectly simple and easy to
+                                            distinguish.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><div class="slimScrollBar ui-draggable" style="background-color: rgb(0, 0, 0); width: 5px; position: absolute; top: 0px; opacity: 0.4; display: block; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; z-index: 99; right: 1px; height: 138.79518072289156px; background-position: initial initial; background-repeat: initial initial;"></div><div class="slimScrollRail" style="width: 5px; height: 100%; position: absolute; top: 0px; display: block; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background-color: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px; background-position: initial initial; background-repeat: initial initial;"></div></div>
+                            <footer class="chat-footer row">
+                                <div class="col-xs-9">
+                                    <input id="new-message" type="text" class="form-control input-transparent" placeholder="Enter your message..">
+                                </div>
+                                <div class="col-xs-3">
+                                    <button type="button" id="new-message-btn" class="btn btn-transparent btn-block">Send</button>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-4">
+                <section class="widget large">
+                    <header>
+                        <h4>
+                            <i class="eicon-share"></i>
+                            Feed
+                        </h4>
+                        <div class="actions">
+                            <button class="btn btn-transparent btn-xs">Show All <i class="icon-arrow-down"></i></button>
+                        </div>
+                    </header>
+                    <div class="body">
+                        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 280px;"><div id="feed" class="feed" style="overflow: hidden; width: auto; height: 280px;">
+                            <div class="wrapper">
+                                <div class="vertical-line"></div>
+                                <section class="feed-item">
+                                    <div class="icon pull-left">
+                                        <i class="icon-comment"></i>
+                                    </div>
+                                    <div class="feed-item-body">
+                                        <div class="text">
+                                            <a href="http://demo.okendoken.com/#">John Doe</a> commented on <a href="http://demo.okendoken.com/#">What Makes Good Code Good</a>.
+                                        </div>
+                                        <div class="time pull-left">
+                                            3 h
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="feed-item">
+                                    <div class="icon pull-left">
+                                        <i class="icon-ok color-green"></i>
+                                    </div>
+                                    <div class="feed-item-body">
+                                        <div class="text">
+                                            <a href="http://demo.okendoken.com/#">Merge request #42</a> has been approved by <a href="http://demo.okendoken.com/#">Jessica Lori</a>.
+                                        </div>
+                                        <div class="time pull-left">
+                                            10 h
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="feed-item">
+                                    <div class="icon pull-left">
+                                        <img src="./Light Blue - Admin Template_files/14.jpg" class="img-circle" alt="">
+                                    </div>
+                                    <div class="feed-item-body">
+                                        <div class="text">
+                                            New user <a href="http://demo.okendoken.com/#">Greg Wilson</a> registered.
+                                        </div>
+                                        <div class="time pull-left">
+                                            Today
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="feed-item">
+                                    <div class="icon pull-left">
+                                        <i class="icon-bolt color-orange"></i>
+                                    </div>
+                                    <div class="feed-item-body">
+                                        <div class="text">
+                                            Server fail level raises above normal. <a href="http://demo.okendoken.com/#">See logs</a> for details.
+                                        </div>
+                                        <div class="time pull-left">
+                                            Yesterday
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="feed-item">
+                                    <div class="icon pull-left">
+                                        <i class="eicon-database"></i>
+                                    </div>
+                                    <div class="feed-item-body">
+                                        <div class="text">
+                                            <a href="http://demo.okendoken.com/#">Database usage report</a> is ready.
+                                        </div>
+                                        <div class="time pull-left">
+                                            Yesterday
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="feed-item">
+                                    <div class="icon pull-left">
+                                        <i class="icon-shopping-cart"></i>
+                                    </div>
+                                    <div class="feed-item-body">
+                                        <div class="text">
+                                            <a href="http://demo.okendoken.com/#">Order #233985</a> needs additional processing.
+                                        </div>
+                                        <div class="time pull-left">
+                                            Wednesday
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="feed-item">
+                                    <div class="icon pull-left">
+                                        <i class="icon-arrow-down"></i>
+                                    </div>
+                                    <div class="feed-item-body">
+                                        <div class="text">
+                                            <a href="http://demo.okendoken.com/#">Load more...</a>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div><div class="slimScrollBar ui-draggable" style="background-color: rgb(0, 0, 0); width: 5px; position: absolute; top: 0px; opacity: 0.4; display: block; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; z-index: 99; right: 1px; height: 198.98477157360406px; background-position: initial initial; background-repeat: initial initial;"></div><div class="slimScrollRail" style="width: 5px; height: 100%; position: absolute; top: 0px; display: block; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background-color: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px; background-position: initial initial; background-repeat: initial initial;"></div></div>
+                    </div>
+                </section>
+                <section class="widget widget-tabs">
+                    <header>
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a href="http://demo.okendoken.com/#stats" data-toggle="tab">Users</a>
+                            </li>
+                            <li>
+                                <a href="http://demo.okendoken.com/#report" data-toggle="tab">Favorites</a>
+                            </li>
+                            <li>
+                                <a href="http://demo.okendoken.com/#dropdown1" data-toggle="tab">Commenters</a>
+                            </li>
+                        </ul>
+                    </header>
+                    <div class="body tab-content">
+                        <div id="stats" class="tab-pane active clearfix">
+                            <h5 class="tab-header"><i class="icon-group"></i> Last logged-in users</h5>
+                            <ul class="users-list">
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/1.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Finees Lund</a></div>
+                                        <div class="position">Product Designer</div>
+                                        <div class="time">Last logged-in: Mar 20, 18:46</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/3.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Erebus Novak</a></div>
+                                        <div class="position">Software Engineer</div>
+                                        <div class="time">Last logged-in: Mar 23, 9:02</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/2.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Leopoldo Reier</a></div>
+                                        <div class="position">Chief Officer</div>
+                                        <div class="time">Last logged-in: Jun 6, 15:34</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/13.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Frans Garey</a></div>
+                                        <div class="position">Financial Assistant</div>
+                                        <div class="time">Last logged-in: Jun 8, 17:20</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/14.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Jessica Johnsson</a></div>
+                                        <div class="position">Sales Manager</div>
+                                        <div class="time">Last logged-in: Jun 8, 9:13</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="report" class="tab-pane">
+                            <h5 class="tab-header"><i class="icon-star"></i> Popular contacts</h5>
+                            <ul class="users-list user-list-no-hover">
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/14.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Jessica Johnsson</a></div>
+                                        <div class="options">
+                                            <button class="btn btn-xs btn-success">
+                                                <i class="icon-phone"></i>
+                                                Call
+                                            </button>
+                                            <button class="btn btn-xs btn-warning">
+                                                <i class="icon-envelope-alt"></i>
+                                                Message
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/13.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Frans Garey</a></div>
+                                        <div class="options">
+                                            <button class="btn btn-xs btn-success">
+                                                <i class="icon-phone"></i>
+                                                Call
+                                            </button>
+                                            <button class="btn btn-xs btn-warning">
+                                                <i class="icon-envelope-alt"></i>
+                                                Message
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/3.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Erebus Novak</a></div>
+                                        <div class="options">
+                                            <button class="btn btn-xs btn-success">
+                                                <i class="icon-phone"></i>
+                                                Call
+                                            </button>
+                                            <button class="btn btn-xs btn-warning">
+                                                <i class="icon-envelope-alt"></i>
+                                                Message
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/2.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Leopoldo Reier</a></div>
+                                        <div class="options">
+                                            <button class="btn btn-xs btn-success">
+                                                <i class="icon-phone"></i>
+                                                Call
+                                            </button>
+                                            <button class="btn btn-xs btn-warning">
+                                                <i class="icon-envelope-alt"></i>
+                                                Message
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/1.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Finees Lund</a></div>
+                                        <div class="options">
+                                            <button class="btn btn-xs btn-success">
+                                                <i class="icon-phone"></i>
+                                                Call
+                                            </button>
+                                            <button class="btn btn-xs btn-warning">
+                                                <i class="icon-envelope-alt"></i>
+                                                Message
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="dropdown1" class="tab-pane">
+                            <h5 class="tab-header"><i class="icon-comments"></i> Top Commenters</h5>
+                            <ul class="users-list">
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/13.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Frans Garey</a></div>
+                                        <div class="comment">
+                                            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+                                            sed quia
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/1.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Finees Lund</a></div>
+                                        <div class="comment">
+                                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                                            eu fugiat.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/14.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Jessica Johnsson</a></div>
+                                        <div class="comment">
+                                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                            deserunt.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/3.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Erebus Novak</a></div>
+                                        <div class="comment">
+                                            Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium
+                                            doloremque.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/2.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Leopoldo Reier</a></div>
+                                        <div class="comment">
+                                            Laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis
+                                            et quasi.
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="widget">
+                    <header>
+                        <h4>
+                            <i class="icon-magnet"></i>
+                            Server Overview
+                        </h4>
+                    </header>
+                    <div class="body">
+                        <ul class="server-stats">
+                            <li>
+                                <div class="key pull-right">CPU</div>
+                                <div class="stat">
+                                    <div class="info">60% / 37°C / 3.3 Ghz</div>
+                                    <div class="progress progress-small">
+                                        <div class="progress-bar progress-bar-danger" style="width: 70%;"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="key pull-right">Mem</div>
+                                <div class="stat">
+                                    <div class="info">29% / 4GB (16 GB)</div>
+                                    <div class="progress progress-small">
+                                        <div class="progress-bar" style="width: 29%;"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="key pull-right">LAN</div>
+                                <div class="stat">
+                                    <div class="info">6 Mb/s <i class="icon-caret-down"></i> &nbsp; 3 Mb/s <i class="icon-caret-up"></i></div>
+                                    <div class="progress progress-small">
+                                        <div class="progress-bar progress-bar-inverse" style="width: 48%;"></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jquery and friends -->
+<script src="./Light Blue - Admin Template_files/jquery.1.9.0.min.js"> </script>
+<script src="./Light Blue - Admin Template_files/jquery-migrate-1.1.0.min.js"> </script>
+
+<!-- jquery plugins -->
+<script src="./Light Blue - Admin Template_files/jquery.icheck.js"></script>
+<script src="./Light Blue - Admin Template_files/jquery.sparkline.js"></script>
+<script src="./Light Blue - Admin Template_files/jquery-ui-1.10.1.custom.js"></script>
+<script src="./Light Blue - Admin Template_files/jquery.slimscroll.js"></script>
+
+<!-- d3, nvd3-->
+<script src="./Light Blue - Admin Template_files/d3.v2.js"></script>
+<script src="./Light Blue - Admin Template_files/nv.d3.custom.js"></script>
+
+<!-- nvd3 models -->
+<script src="./Light Blue - Admin Template_files/scatter.js"></script>
+<script src="./Light Blue - Admin Template_files/axis.js"></script>
+<script src="./Light Blue - Admin Template_files/legend.js"></script>
+<script src="./Light Blue - Admin Template_files/multiBar.js"></script>
+<script src="./Light Blue - Admin Template_files/multiBarChart.js"></script>
+<script src="./Light Blue - Admin Template_files/line.js"></script>
+<script src="./Light Blue - Admin Template_files/lineChart.js"></script>
+<script src="./Light Blue - Admin Template_files/stream_layers.js"></script>
+
+<!--backbone and friends -->
+<script src="./Light Blue - Admin Template_files/underscore-min.js"></script>
+<script src="./Light Blue - Admin Template_files/backbone-min.js"></script>
+<script src="./Light Blue - Admin Template_files/backbone.localStorage-min.js"></script>
+
+<!-- bootstrap default plugins -->
+<script src="./Light Blue - Admin Template_files/transition.js"></script>
+<script src="./Light Blue - Admin Template_files/collapse.js"></script>
+<script src="./Light Blue - Admin Template_files/alert.js"></script>
+<script src="./Light Blue - Admin Template_files/tooltip.js"></script>
+<script src="./Light Blue - Admin Template_files/popover.js"></script>
+<script src="./Light Blue - Admin Template_files/button.js"></script>
+<script src="./Light Blue - Admin Template_files/tab.js"> </script>
+<script src="./Light Blue - Admin Template_files/dropdown.js"></script>
+
+<!-- basic application js-->
+<script src="./Light Blue - Admin Template_files/app.js"></script>
+<script src="./Light Blue - Admin Template_files/settings.js"></script>
+
+<!-- page specific -->
+<script src="./Light Blue - Admin Template_files/index.js"></script>
+<script src="./Light Blue - Admin Template_files/chat.js"></script>
+
+<script type="text/template" id="message-template">
+        <div class="sender pull-left">
+            <div class="icon">
+                <img src="img/2.jpg" class="img-circle" alt="">
+            </div>
+            <div class="time">
+                just now
+            </div>
+        </div>
+        <div class="chat-message-body">
+            <span class="arrow"></span>
+            <div class="sender">Tikhon Laninga</div>
+            <div class="text">
+               testg
+            </div>
+        </div>
+</script>
+
+<script type="text/template" id="settings-template">
+    <div class="setting clearfix">
+        <div>Background</div>
+        <div id="background-toggle" class="pull-left btn-group" data-toggle="buttons-radio">
+      
+            <button type="button" data-value="dark" class="btn btn-sm btn-transparent active">Dark</button>
+            <button type="button" data-value="light" class="btn btn-sm btn-transparent">Light</button>
+        </div>
+    </div>
+    <div class="setting clearfix">
+        <div>Sidebar on the</div>
+        <div id="sidebar-toggle" class="pull-left btn-group" data-toggle="buttons-radio">
+            
+            <button type="button" data-value="left" class="btn btn-sm btn-transparent active">Left</button>
+            <button type="button" data-value="right" class="btn btn-sm btn-transparent >">Right</button>
+        </div>
+    </div>
+    <div class="setting clearfix">
+        <div>Sidebar</div>
+        <div id="display-sidebar-toggle" class="pull-left btn-group" data-toggle="buttons-radio">
+       
+            <button type="button" data-value="true" class="btn btn-sm btn-transparent>">Show</button>
+            <button type="button" data-value="false" class="btn btn-sm btn-transparent>">Hide</button>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="sidebar-settings-template">
+   
+</script>
+
+
+</body></html>

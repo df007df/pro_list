@@ -3,9 +3,12 @@
 <head>
   <title>Project</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
- 
+  <%= stylesheet_link_tag    params[:controller] %>		
+
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= yield :head_block %>
+  <%= javascript_include_tag  params[:controller] + '/' + params[:controller] %>
+
 
   <%= csrf_meta_tags %>
 </head>
