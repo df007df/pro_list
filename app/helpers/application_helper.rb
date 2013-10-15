@@ -44,4 +44,18 @@ module ApplicationHelper
 	end 
 
 
+	def getPros
+		@pro_list = []
+		@pros = Pro.all
+
+		@pros.each do |item|
+			if !item.url.empty?
+			 @pro_list.push(item)
+		   end
+    	end
+
+    	"<script>var pro_list = #{@pro_list.to_json};</script>"
+
+	end	
+
 end

@@ -16,6 +16,10 @@
     <meta charset="utf-8">
 <style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style><style type="text/css">.jlhlebbhengjlhmcjebbkambaekglhkf {top: 0px; left: 0px;min-width: 30px;max-width: 300px;font-size: 13px;font-family: arial, helvetica, sans-serif;opacity: .93;padding:0px;position:absolute;display:block;z-index: 999997;font-style: normal;font-variant: normal;font-weight: normal;}#jlhlebbhengjlhmcjebbkambaekglhkf_up{text-align: center;padding:0px;margin: 0px;}#jlhlebbhengjlhmcjebbkambaekglhkf_cont{background-color: #729FCF;font-family: arial, helvetica, sans-serif-webkit-box-shadow: #729FCF 0px 0px 2px;color: #FFFFFF;padding:7px;-webkit-border-radius: 5px;}#jlhlebbhengjlhmcjebbkambaekglhkf_down{text-align: center;padding:0px;margin: 0px;}</style></head>
 <body class="background-dark" style="zoom: 1;">
+
+    <%= yield %>
+
+
 <div class="logo">
     <h4><a href="http://demo.okendoken.com/index.html">Light <strong>Blue</strong></a></h4>
 </div>
@@ -320,68 +324,19 @@
                         </h4>
                     </header>
                     <div class="body">
-                        <table class="table table-striped no-margin sources-table">
+                        <table class="table table-striped no-margin sources-table" id='log_trend'>
                             <thead>
                             <tr>
-                                <th class="source-col-header">Source</th>
-                                <th>Amount</th>
-                                <th>Change</th>
-                                <th class="hidden-xs">Percent.,%</th>
-                                <th>Target</th>
-                                <th class="chart-col-header hidden-xs">Trend</th>
+                                <th class="source-col-header">项目名称</th>
+                                <th>错误数</th>
+                                <th>错误趋势</th>
+                                <th class="hidden-xs">所占历史比例 %</th>
+                                <th>总错误数</th>
+                                <th class="chart-col-header hidden-xs">趋势图</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td><span class="label label-important">Direct</span></td>
-                                <td>713</td>
-                                <td><strong class="color-green">+53</strong></td>
-                                <td class="hidden-xs">+12</td>
-                                <td>900</td>
-                                <td class="chart-cell hidden-xs">
-                                    <div id="direct-trend"><canvas width="150" height="30" style="display: inline-block; width: 150px; height: 30px; vertical-align: top;"></canvas></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><span class="label label-warning">Refer</span></td>
-                                <td>562</td>
-                                <td><strong>+84</strong></td>
-                                <td class="hidden-xs">+64</td>
-                                <td>500</td>
-                                <td class="chart-cell hidden-xs">
-                                    <div id="refer-trend"><canvas width="150" height="30" style="display: inline-block; width: 150px; height: 30px; vertical-align: top;"></canvas></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><span class="label label-success">Social</span></td>
-                                <td>148</td>
-                                <td><strong class="color-red">-12</strong></td>
-                                <td class="hidden-xs">+3</td>
-                                <td>180</td>
-                                <td class="chart-cell hidden-xs">
-                                    <div id="social-trend"><canvas width="150" height="30" style="display: inline-block; width: 150px; height: 30px; vertical-align: top;"></canvas></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><span class="label label-info">Search</span></td>
-                                <td>653</td>
-                                <td><strong class="color-green">+23</strong></td>
-                                <td class="hidden-xs">+43</td>
-                                <td>876</td>
-                                <td class="chart-cell hidden-xs">
-                                    <div id="search-trend"><canvas width="150" height="30" style="display: inline-block; width: 150px; height: 30px; vertical-align: top;"></canvas></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><span class="label label-inverse">Internal</span></td>
-                                <td>976</td>
-                                <td><strong>+101</strong></td>
-                                <td class="hidden-xs">-7</td>
-                                <td>844</td>
-                                <td class="chart-cell hidden-xs">
-                                    <div id="internal-trend"><canvas width="150" height="30" style="display: inline-block; width: 150px; height: 30px; vertical-align: top;"></canvas></div>
-                                </td>
-                            </tr>
+
                             </tbody>
                         </table>
                     </div>

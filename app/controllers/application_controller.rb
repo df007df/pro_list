@@ -14,4 +14,6 @@ class ApplicationController < ActionController::Base
 	session[:user] = nil
   end
 
+
+
 end
