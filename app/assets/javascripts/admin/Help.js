@@ -46,9 +46,13 @@ Help.tableqs = {
 			
 			if (data.qs > 0) {
 				trobj.find('.qs').text('+' + data.qs);
-				trobj.find('.qs').addClass('color-green');
-			} else {
 				trobj.find('.qs').addClass('color-red');
+			} else if (data.qs == 0) {
+				trobj.find('.qs').text(data.qs);
+				//trobj.find('.qs').addClass('color-red');	
+			} else {
+				trobj.find('.qs').text(data.qs);
+				trobj.find('.qs').addClass('color-green');
 			}
 
 			if (!_.isEmpty(data.qsdata)) {

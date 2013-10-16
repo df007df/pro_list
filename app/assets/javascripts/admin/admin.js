@@ -16,6 +16,7 @@ Dashboard.log = {
 			_.each(pros, function(pro) {
 				Dashboard.log.fetchPro(pro)
 			});
+			Help.tableqs.init($('#log_trend tbody'));
 		}
 
 		Dashboard.getPros(bak);
@@ -25,8 +26,6 @@ Dashboard.log = {
 	fetchPro: function(pro) {
 		var trTmp = ich.log_list_tr({name: pro.name, url: pro.url})
 		$('#log_trend tbody').append(trTmp);
-
-		Help.tableqs.init($('#log_trend tbody'));
 	},
 
 	renderSparkline: function() {
