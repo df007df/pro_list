@@ -12,7 +12,7 @@ Admin.api = {
 
 	fetch: function(url, data, callback) {
 		url = url + '/?_auth=' + Admin.auth + '&callback=?';
-		alert(url)
+
 		$.ajax({
 		  async: true,
 		  url: url,

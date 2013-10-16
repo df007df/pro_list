@@ -71,6 +71,6 @@ class ProsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pro_params
-      params.require(:pro).permit(:name, :localhost, :url, :des, :branch)
+      params.require(:pro).permit(:name, :localhost, :url, :des, :branch, :testip)
     end
 end
