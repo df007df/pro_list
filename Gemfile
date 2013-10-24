@@ -7,6 +7,8 @@ gem 'kaminari'
 
 #gem 'bootstrap-sass'
 
+gem 'unicorn'
+
 gem 'pry'
 
 gem 'faraday'
