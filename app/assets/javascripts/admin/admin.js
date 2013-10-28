@@ -1,12 +1,13 @@
 
 //= require_tree .
+//= require_tree ./../easy-pie-chart
 
 var Dashboard = Dashboard || {};
 
 
 Dashboard.getPros = function(bak) {
 	return bak(pro_list ? pro_list : []);
-}
+};
 
 Dashboard.log = {
 
@@ -35,10 +36,39 @@ Dashboard.log = {
 	}
 
 
-}
+};
+
+
+
+Dashboard.checkfunction = {
+
+	init: function() {
+		var bak = function(pros) {
+			_.each(pros, function(pro) {
+				Dashboard.checkfunction.addStatusPanel(pro)
+			});
+
+			Help.easypie.bind($('#checkfunction .health_status'));
+		}
+
+		Dashboard.getPros(bak);
+	},
+
+
+	addStatusPanel: function(pro) {
+		var trTmp = ich.healthStatus({name: pro.name})
+		$('#checkfunction').append(trTmp);
+	}
+
+
+};
+
+
 
 
 $(function() {
 	Dashboard.log.init();
+
+	Dashboard.checkfunction.init();
 });
 	

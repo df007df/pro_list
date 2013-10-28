@@ -1,3 +1,17 @@
 /*
+ *= require_tree ./easy-pie-chart
  *= require_tree ./admin
  */
+
+
+ #checkfunction .box{
+
+
+ }
+
+  #checkfunction .box .status_show {
+  	top: 40px;
+	position: absolute;
+	right: 25px;
+	width: 122px;
+ }

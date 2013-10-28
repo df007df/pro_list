@@ -4,7 +4,7 @@ var Help = Help || {};
 Help.random = function(max) {
 
 	return parseInt(Math.random()*(max));
-}
+};
 
 Help.tableqs = {
 
@@ -133,6 +133,26 @@ Help.sparkline = {
 
 		obj.sparkline(data, config);
     }
+};
+
+
+Help.easypie = {
+
+	_config: {
+		animate: 2000,
+		barColor: '#8ecf67',
+		trackColor: '#f2f2f2',
+		scaleColor: '#dfe0e0',
+		lineCap: 'round',
+		lineWidth: 4,
+		size: 110
+	},
+
+	bind: function(obj) {
+		obj.easyPieChart(this._config);
+	}
+
+
 };
 
 
