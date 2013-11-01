@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<!-- saved from url=(0026)http://demo.okendoken.com/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Light Blue - Admin Template</title>
+   	
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    params[:controller]%>		
+
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= yield :head_block %>
+  <%= javascript_include_tag  params[:controller]%>
+
+
+  <%= csrf_meta_tags %>
+
+    <meta charset="utf-8">
+<style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style><style type="text/css">.jlhlebbhengjlhmcjebbkambaekglhkf {top: 0px; left: 0px;min-width: 30px;max-width: 300px;font-size: 13px;font-family: arial, helvetica, sans-serif;opacity: .93;padding:0px;position:absolute;display:block;z-index: 999997;font-style: normal;font-variant: normal;font-weight: normal;}#jlhlebbhengjlhmcjebbkambaekglhkf_up{text-align: center;padding:0px;margin: 0px;}#jlhlebbhengjlhmcjebbkambaekglhkf_cont{background-color: #729FCF;font-family: arial, helvetica, sans-serif-webkit-box-shadow: #729FCF 0px 0px 2px;color: #FFFFFF;padding:7px;-webkit-border-radius: 5px;}#jlhlebbhengjlhmcjebbkambaekglhkf_down{text-align: center;padding:0px;margin: 0px;}</style></head>
+<body class="background-dark" style="zoom: 1;">
+
+    <%= yield %>
+
+
+<div class="logo">
+    <h4><a href="http://demo.okendoken.com/index.html">Light <strong>Blue</strong></a></h4>
+</div>
+<nav id="sidebar" class="sidebar nav-collapse collapse">
+    <ul id="side-nav" class="side-nav">
+        <li class="active">
+            <a href="http://demo.okendoken.com/index.html"><i class="icon-home"></i> <span class="name">Dashboard</span></a>
+        </li>
+        <li class="panel">
+            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="http://demo.okendoken.com/#forms-collapse"><i class="icon-edit"></i> <span class="name">Forms</span></a>
+            <ul id="forms-collapse" class="panel-collapse collapse">
+                <li><a href="http://demo.okendoken.com/form_account.html">Account</a></li>
+                <li><a href="http://demo.okendoken.com/form_article.html">Article</a></li>
+                <li><a href="http://demo.okendoken.com/form_elements.html">Elements</a></li>
+                <li><a href="http://demo.okendoken.com/form_validation.html">Validation</a></li>
+                <li><a href="http://demo.okendoken.com/form_wizard.html">Wizard</a></li>
+            </ul>
+        </li>
+        <li class="panel">
+            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="http://demo.okendoken.com/#stats-collapse"><i class="icon-bar-chart"></i> <span class="name">Statistics</span></a>
+            <ul id="stats-collapse" class="panel-collapse collapse">
+                <li><a href="http://demo.okendoken.com/stat_statistics.html">Stats</a></li>
+                <li><a href="http://demo.okendoken.com/stat_charts.html">Charts</a></li>
+                <li><a href="http://demo.okendoken.com/stat_realtime.html">Realtime</a></li>
+            </ul>
+        </li>
+        <li class="panel">
+            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="http://demo.okendoken.com/#ui-collapse"><i class="icon-magic"></i> <span class="name">User Interface</span></a>
+            <ul id="ui-collapse" class="panel-collapse collapse">
+                <li><a href="http://demo.okendoken.com/ui_buttons.html">Buttons</a></li>
+                <li><a href="http://demo.okendoken.com/ui_dialogs.html">Dialogs</a></li>
+                <li><a href="http://demo.okendoken.com/ui_icons.html">Icons</a></li>
+                <li><a href="http://demo.okendoken.com/ui_tabs.html">Tabs</a></li>
+                <li><a href="http://demo.okendoken.com/ui_accordion.html">Accordion</a></li>
+            </ul>
+        </li>
+        <li class="panel">
+            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="http://demo.okendoken.com/#components-collapse"><i class="icon-bookmark-empty"></i> <span class="name">Components</span></a>
+            <ul id="components-collapse" class="panel-collapse collapse">
+                <li><a href="http://demo.okendoken.com/component_calendar.html">Calendar</a></li>
+                <li><a href="http://demo.okendoken.com/component_maps.html">Maps</a></li>
+                <li><a href="http://demo.okendoken.com/component_gallery.html">Gallery</a></li>
+                <li><a href="http://demo.okendoken.com/component_fileupload.html">Fileupload</a></li>
+            </ul>
+        </li>
+        <li class="panel">
+            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="http://demo.okendoken.com/#tables-collapse"><i class="icon-table"></i> <span class="name">Tables</span></a>
+            <ul id="tables-collapse" class="panel-collapse collapse">
+                <li><a href="http://demo.okendoken.com/tables_static.html">Static</a></li>
+                <li><a href="http://demo.okendoken.com/tables_dynamic.html">Dynamic</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="http://demo.okendoken.com/grid.html"><i class="icon-reorder"></i> <span class="name">Grid</span></a>
+        </li>
+        <li class="panel">
+            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="http://demo.okendoken.com/#special-collapse"><i class="icon-asterisk"></i> <span class="name">Special</span></a>
+            <ul id="special-collapse" class="panel-collapse collapse">
+                <li><a href="http://demo.okendoken.com/special_search.html">Search</a></li>
+                <li><a href="http://demo.okendoken.com/special_invoice.html">Invoice</a></li>
+                <li><a href="http://demo.okendoken.com/special_inbox.html">Inbox <span class="label label-important">3</span></a></li>
+                <li><a href="http://demo.okendoken.com/login.html">Login</a></li>
+                <li><a href="http://demo.okendoken.com/special_404.html">404</a></li>
+                <li><a href="http://demo.okendoken.com/landing.html">Landing</a></li>
+                <li><a href="http://demo.okendoken.com/white/index.html">White <i class="icon-external-link-sign"></i></a></li>
+            </ul>
+        </li>
+        <li class="visible-xs">
+            <a href="http://demo.okendoken.com/login.html"><i class="icon-signout"></i> <span class="name">Sign Out</span></a>
+        </li>
+    </ul>
+    <div id="sidebar-settings" class="settings">
+    
+    
+    <button type="button" data-value="icons" class="btn-icons btn btn-transparent btn-sm">Icons</button>
+    <button type="button" data-value="auto" class="btn-auto btn btn-transparent btn-sm">Auto</button>
+    
+</div>
+</nav>
+<div class="wrap">
+    <header class="page-header">
+        <div class="navbar">
+                <ul class="nav navbar-nav navbar-right pull-right">
+                    <li class="visible-phone-landscape">
+                        <a href="http://demo.okendoken.com/#" id="search-toggle">
+                            <i class="icon-search"></i>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="http://demo.okendoken.com/#" title="Messages" id="messages" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-comments"></i>
+                        </a>
+                        <ul id="messages-menu" class="dropdown-menu messages" role="menu">
+                            <li role="presentation">
+                                <a href="http://demo.okendoken.com/#" class="message">
+                                    <img src="./Light Blue - Admin Template_files/1.jpg" alt="">
+                                    <div class="details">
+                                        <div class="sender">Jane Hew</div>
+                                        <div class="text">
+                                            Hey, John! How is it going? ...
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="http://demo.okendoken.com/#" class="message">
+                                    <img src="./Light Blue - Admin Template_files/2.jpg" alt="">
+                                    <div class="details">
+                                        <div class="sender">Alies Rumiancaŭ</div>
+                                        <div class="text">
+                                            I'll definitely buy this template
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="http://demo.okendoken.com/#" class="message">
+                                    <img src="./Light Blue - Admin Template_files/3.jpg" alt="">
+                                    <div class="details">
+                                        <div class="sender">Michał Rumiancaŭ</div>
+                                        <div class="text">
+                                            Is it really Lore ipsum? Lore ...
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="http://demo.okendoken.com/#" class="text-align-center see-all">
+                                    See all messages <i class="icon-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="http://demo.okendoken.com/#" title="8 support tickets" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-group"></i>
+                            <span class="count">8</span>
+                        </a>
+                        <ul id="support-menu" class="dropdown-menu support" role="menu">
+                            <li role="presentation">
+                                <a href="http://demo.okendoken.com/#" class="support-ticket">
+                                    <div class="picture">
+                                        <span class="label label-important"><i class="icon-bell-alt"></i></span>
+                                    </div>
+                                    <div class="details">
+                                        Check out this awesome ticket
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="http://demo.okendoken.com/#" class="support-ticket">
+                                    <div class="picture">
+                                        <span class="label label-warning"><i class="icon-question-sign"></i></span>
+                                    </div>
+                                    <div class="details">
+                                        "What is the best way to get ...
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="http://demo.okendoken.com/#" class="support-ticket">
+                                    <div class="picture">
+                                        <span class="label label-success"><i class="icon-tag"></i></span>
+                                    </div>
+                                    <div class="details">
+                                        This is just a simple notification
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="http://demo.okendoken.com/#" class="support-ticket">
+                                    <div class="picture">
+                                        <span class="label label-info"><i class="icon-info-sign"></i></span>
+                                    </div>
+                                    <div class="details">
+                                        12 new orders has arrived today
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="http://demo.okendoken.com/#" class="support-ticket">
+                                    <div class="picture">
+                                        <span class="label label-important"><i class="icon-plus"></i></span>
+                                    </div>
+                                    <div class="details">
+                                        One more thing that just happened
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="http://demo.okendoken.com/#" class="text-align-center see-all">
+                                    See all tickets <i class="icon-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="hidden-xs">
+                        <a href="http://demo.okendoken.com/#" id="settings" title="" data-toggle="popover" data-placement="bottom" data-original-title="Settings">
+                            <i class="icon-cog"></i>
+                        </a>
+                    </li>
+                    <li class="hidden-xs dropdown">
+                        <a href="http://demo.okendoken.com/#" title="Account" id="account" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-user"></i>
+                        </a>
+                        <ul id="account-menu" class="dropdown-menu account" role="menu">
+                            <li role="presentation" class="account-picture">
+                                <img src="./Light Blue - Admin Template_files/2.jpg" alt="">
+                                Philip Daineka
+                            </li>
+                            <li role="presentation">
+                                <a href="http://demo.okendoken.com/form_account.html" class="link">
+                                    <i class="icon-user"></i>
+                                    Profile
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="http://demo.okendoken.com/component_calendar.html" class="link">
+                                    <i class="icon-calendar"></i>
+                                    Calendar
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="http://demo.okendoken.com/#" class="link">
+                                    <i class="icon-inbox"></i>
+                                    Inbox
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="visible-xs">
+                        <a href="http://demo.okendoken.com/#" class="btn-navbar" data-toggle="collapse" data-target=".sidebar" title="">
+                            <i class="icon-reorder"></i>
+                        </a>
+                    </li>
+                    <li class="hidden-xs"><a href="http://demo.okendoken.com/login.html"><i class="icon-signout"></i></a></li>
+                </ul>
+                <form id="search-form" class="navbar-form pull-right" role="search">
+                    <input type="search" class="search-query" placeholder="Search...">
+                </form>
+                <div class="notifications pull-right">
+                    <div class="alert pull-right">
+                        <a href="http://demo.okendoken.com/#" class="close" data-dismiss="alert">×</a>
+                        <i class="icon-info-sign"></i> Check out Light Blue <a id="notification-link" href="http://demo.okendoken.com/#">settings</a> on the right!
+                    </div>
+                </div>
+        </div>
+    </header>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="page-title">项目健康监控 <small>健康状态</small></h2>
+            </div>
+        </div>
+
+
+        <!--checkfunction start-->
+        <div class="row" id='checkfunction'>
+            
+            
+        </div>
+        <!--checkfunction end-->
+
+        <div class="row">
+            <div class="col-md-8">
+
+
+                <section class="widget">
+                    <header>
+                        <h4>
+                            <i class="icon-shopping-cart"></i>
+                            项目错误统计
+                            <small>
+                                php运行错误
+                            </small>
+                        </h4>
+                    </header>
+                    <div class="body">
+                        <table class="table table-striped no-margin sources-table" id='log_trend'>
+                            <thead>
+                            <tr>
+                                <th class="source-col-header">项目名称</th>
+                                <th>错误数</th>
+                                <th>错误趋势</th>
+                                <th class="hidden-xs">所占历史比例 %</th>
+                                <th>总错误数</th>
+                                <th class="chart-col-header hidden-xs">趋势图</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section class="widget large">
+                    <header>
+                        <h4>
+                            <i class="eicon-chat"></i>
+                            Chat
+                        </h4>
+                    </header>
+                    <div class="body">
+                        <div id="chat" class="chat">
+                            <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 240px;"><div id="chat-messages" class="chat-messages" style="overflow: hidden; width: auto; height: 240px;">
+                                <div class="chat-message">
+                                    <div class="sender pull-left">
+                                        <div class="icon">
+                                            <img src="./Light Blue - Admin Template_files/2.jpg" class="img-circle" alt="">
+                                        </div>
+                                        <div class="time">
+                                            4 min
+                                        </div>
+                                    </div>
+                                    <div class="chat-message-body">
+                                        <span class="arrow"></span>
+                                        <div class="sender"><a href="http://demo.okendoken.com/#">Tikhon Laninga</a></div>
+                                        <div class="text">
+                                            Hey Sam, how is it going? But I must explain to you how all this mistaken
+                                            idea of denouncing of a pleasure and praising pain was born
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chat-message">
+                                    <div class="sender pull-right">
+                                        <div class="icon">
+                                            <img src="./Light Blue - Admin Template_files/1.jpg" class="img-circle" alt="">
+                                        </div>
+                                        <div class="time">
+                                            3 min
+                                        </div>
+                                    </div>
+                                    <div class="chat-message-body on-left">
+                                        <span class="arrow"></span>
+                                        <div class="sender"><a href="http://demo.okendoken.com/#">Cenhelm Houston</a></div>
+                                        <div class="text">
+                                            Pretty good. Doing my homework..  No one rejects, dislikes, or avoids
+                                            pleasure itself, because it is pleasure, but because
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chat-message">
+                                    <div class="sender pull-left">
+                                        <div class="icon">
+                                            <img src="./Light Blue - Admin Template_files/2.jpg" class="img-circle" alt="">
+                                        </div>
+                                        <div class="time">
+                                            2 min
+                                        </div>
+                                    </div>
+                                    <div class="chat-message-body">
+                                        <span class="arrow"></span>
+                                        <div class="sender"><a href="http://demo.okendoken.com/#">Tikhon Laninga</a></div>
+                                        <div class="text">
+                                            Any chance to go out? To take a trivial example, which of us ever undertakes
+                                            laborious physical exercise, except to obtain some advantage
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chat-message">
+                                    <div class="sender pull-right">
+                                        <div class="icon">
+                                            <img src="./Light Blue - Admin Template_files/1.jpg" class="img-circle" alt="">
+                                        </div>
+                                        <div class="time">
+                                            2 min
+                                        </div>
+                                    </div>
+                                    <div class="chat-message-body on-left">
+                                        <span class="arrow"></span>
+                                        <div class="sender"><a href="http://demo.okendoken.com/#">Cenhelm Houston</a></div>
+                                        <div class="text">
+                                            .. Maybe 40-50 mins. I don't know exactly. On the other hand, we denounce
+                                            with righteous indignation and dislike men who are so beguiled
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chat-message">
+                                    <div class="sender pull-left">
+                                        <div class="icon">
+                                            <img src="./Light Blue - Admin Template_files/2.jpg" class="img-circle" alt="">
+                                        </div>
+                                        <div class="time">
+                                            1 min
+                                        </div>
+                                    </div>
+                                    <div class="chat-message-body">
+                                        <span class="arrow"></span>
+                                        <div class="sender"><a href="http://demo.okendoken.com/#">Tikhon Laninga</a></div>
+                                        <div class="text">
+                                            Anyway sounds great! These cases are perfectly simple and easy to
+                                            distinguish.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><div class="slimScrollBar ui-draggable" style="background-color: rgb(0, 0, 0); width: 5px; position: absolute; top: 0px; opacity: 0.4; display: block; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; z-index: 99; right: 1px; height: 138.79518072289156px; background-position: initial initial; background-repeat: initial initial;"></div><div class="slimScrollRail" style="width: 5px; height: 100%; position: absolute; top: 0px; display: block; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background-color: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px; background-position: initial initial; background-repeat: initial initial;"></div></div>
+                            <footer class="chat-footer row">
+                                <div class="col-xs-9">
+                                    <input id="new-message" type="text" class="form-control input-transparent" placeholder="Enter your message..">
+                                </div>
+                                <div class="col-xs-3">
+                                    <button type="button" id="new-message-btn" class="btn btn-transparent btn-block">Send</button>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-4">
+                <section class="widget large">
+                    <header>
+                        <h4>
+                            <i class="eicon-share"></i>
+                            Feed
+                        </h4>
+                        <div class="actions">
+                            <button class="btn btn-transparent btn-xs">Show All <i class="icon-arrow-down"></i></button>
+                        </div>
+                    </header>
+                    <div class="body">
+                        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 280px;"><div id="feed" class="feed" style="overflow: hidden; width: auto; height: 280px;">
+                            <div class="wrapper">
+                                <div class="vertical-line"></div>
+                                <section class="feed-item">
+                                    <div class="icon pull-left">
+                                        <i class="icon-comment"></i>
+                                    </div>
+                                    <div class="feed-item-body">
+                                        <div class="text">
+                                            <a href="http://demo.okendoken.com/#">John Doe</a> commented on <a href="http://demo.okendoken.com/#">What Makes Good Code Good</a>.
+                                        </div>
+                                        <div class="time pull-left">
+                                            3 h
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="feed-item">
+                                    <div class="icon pull-left">
+                                        <i class="icon-ok color-green"></i>
+                                    </div>
+                                    <div class="feed-item-body">
+                                        <div class="text">
+                                            <a href="http://demo.okendoken.com/#">Merge request #42</a> has been approved by <a href="http://demo.okendoken.com/#">Jessica Lori</a>.
+                                        </div>
+                                        <div class="time pull-left">
+                                            10 h
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="feed-item">
+                                    <div class="icon pull-left">
+                                        <img src="./Light Blue - Admin Template_files/14.jpg" class="img-circle" alt="">
+                                    </div>
+                                    <div class="feed-item-body">
+                                        <div class="text">
+                                            New user <a href="http://demo.okendoken.com/#">Greg Wilson</a> registered.
+                                        </div>
+                                        <div class="time pull-left">
+                                            Today
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="feed-item">
+                                    <div class="icon pull-left">
+                                        <i class="icon-bolt color-orange"></i>
+                                    </div>
+                                    <div class="feed-item-body">
+                                        <div class="text">
+                                            Server fail level raises above normal. <a href="http://demo.okendoken.com/#">See logs</a> for details.
+                                        </div>
+                                        <div class="time pull-left">
+                                            Yesterday
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="feed-item">
+                                    <div class="icon pull-left">
+                                        <i class="eicon-database"></i>
+                                    </div>
+                                    <div class="feed-item-body">
+                                        <div class="text">
+                                            <a href="http://demo.okendoken.com/#">Database usage report</a> is ready.
+                                        </div>
+                                        <div class="time pull-left">
+                                            Yesterday
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="feed-item">
+                                    <div class="icon pull-left">
+                                        <i class="icon-shopping-cart"></i>
+                                    </div>
+                                    <div class="feed-item-body">
+                                        <div class="text">
+                                            <a href="http://demo.okendoken.com/#">Order #233985</a> needs additional processing.
+                                        </div>
+                                        <div class="time pull-left">
+                                            Wednesday
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="feed-item">
+                                    <div class="icon pull-left">
+                                        <i class="icon-arrow-down"></i>
+                                    </div>
+                                    <div class="feed-item-body">
+                                        <div class="text">
+                                            <a href="http://demo.okendoken.com/#">Load more...</a>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div><div class="slimScrollBar ui-draggable" style="background-color: rgb(0, 0, 0); width: 5px; position: absolute; top: 0px; opacity: 0.4; display: block; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; z-index: 99; right: 1px; height: 198.98477157360406px; background-position: initial initial; background-repeat: initial initial;"></div><div class="slimScrollRail" style="width: 5px; height: 100%; position: absolute; top: 0px; display: block; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background-color: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px; background-position: initial initial; background-repeat: initial initial;"></div></div>
+                    </div>
+                </section>
+                <section class="widget widget-tabs">
+                    <header>
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a href="http://demo.okendoken.com/#stats" data-toggle="tab">Users</a>
+                            </li>
+                            <li>
+                                <a href="http://demo.okendoken.com/#report" data-toggle="tab">Favorites</a>
+                            </li>
+                            <li>
+                                <a href="http://demo.okendoken.com/#dropdown1" data-toggle="tab">Commenters</a>
+                            </li>
+                        </ul>
+                    </header>
+                    <div class="body tab-content">
+                        <div id="stats" class="tab-pane active clearfix">
+                            <h5 class="tab-header"><i class="icon-group"></i> Last logged-in users</h5>
+                            <ul class="users-list">
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/1.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Finees Lund</a></div>
+                                        <div class="position">Product Designer</div>
+                                        <div class="time">Last logged-in: Mar 20, 18:46</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/3.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Erebus Novak</a></div>
+                                        <div class="position">Software Engineer</div>
+                                        <div class="time">Last logged-in: Mar 23, 9:02</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/2.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Leopoldo Reier</a></div>
+                                        <div class="position">Chief Officer</div>
+                                        <div class="time">Last logged-in: Jun 6, 15:34</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/13.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Frans Garey</a></div>
+                                        <div class="position">Financial Assistant</div>
+                                        <div class="time">Last logged-in: Jun 8, 17:20</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/14.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Jessica Johnsson</a></div>
+                                        <div class="position">Sales Manager</div>
+                                        <div class="time">Last logged-in: Jun 8, 9:13</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="report" class="tab-pane">
+                            <h5 class="tab-header"><i class="icon-star"></i> Popular contacts</h5>
+                            <ul class="users-list user-list-no-hover">
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/14.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Jessica Johnsson</a></div>
+                                        <div class="options">
+                                            <button class="btn btn-xs btn-success">
+                                                <i class="icon-phone"></i>
+                                                Call
+                                            </button>
+                                            <button class="btn btn-xs btn-warning">
+                                                <i class="icon-envelope-alt"></i>
+                                                Message
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/13.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Frans Garey</a></div>
+                                        <div class="options">
+                                            <button class="btn btn-xs btn-success">
+                                                <i class="icon-phone"></i>
+                                                Call
+                                            </button>
+                                            <button class="btn btn-xs btn-warning">
+                                                <i class="icon-envelope-alt"></i>
+                                                Message
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/3.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Erebus Novak</a></div>
+                                        <div class="options">
+                                            <button class="btn btn-xs btn-success">
+                                                <i class="icon-phone"></i>
+                                                Call
+                                            </button>
+                                            <button class="btn btn-xs btn-warning">
+                                                <i class="icon-envelope-alt"></i>
+                                                Message
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/2.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Leopoldo Reier</a></div>
+                                        <div class="options">
+                                            <button class="btn btn-xs btn-success">
+                                                <i class="icon-phone"></i>
+                                                Call
+                                            </button>
+                                            <button class="btn btn-xs btn-warning">
+                                                <i class="icon-envelope-alt"></i>
+                                                Message
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/1.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Finees Lund</a></div>
+                                        <div class="options">
+                                            <button class="btn btn-xs btn-success">
+                                                <i class="icon-phone"></i>
+                                                Call
+                                            </button>
+                                            <button class="btn btn-xs btn-warning">
+                                                <i class="icon-envelope-alt"></i>
+                                                Message
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="dropdown1" class="tab-pane">
+                            <h5 class="tab-header"><i class="icon-comments"></i> Top Commenters</h5>
+                            <ul class="users-list">
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/13.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Frans Garey</a></div>
+                                        <div class="comment">
+                                            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+                                            sed quia
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/1.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Finees Lund</a></div>
+                                        <div class="comment">
+                                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                                            eu fugiat.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/14.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Jessica Johnsson</a></div>
+                                        <div class="comment">
+                                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                            deserunt.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/3.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Erebus Novak</a></div>
+                                        <div class="comment">
+                                            Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium
+                                            doloremque.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./Light Blue - Admin Template_files/2.jpg" alt="" class="pull-left img-circle">
+                                    <div class="user-info">
+                                        <div class="name"><a href="http://demo.okendoken.com/#">Leopoldo Reier</a></div>
+                                        <div class="comment">
+                                            Laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis
+                                            et quasi.
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="widget">
+                    <header>
+                        <h4>
+                            <i class="icon-magnet"></i>
+                            Server Overview
+                        </h4>
+                    </header>
+                    <div class="body">
+                        <ul class="server-stats">
+                            <li>
+                                <div class="key pull-right">CPU</div>
+                                <div class="stat">
+                                    <div class="info">60% / 37°C / 3.3 Ghz</div>
+                                    <div class="progress progress-small">
+                                        <div class="progress-bar progress-bar-danger" style="width: 70%;"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="key pull-right">Mem</div>
+                                <div class="stat">
+                                    <div class="info">29% / 4GB (16 GB)</div>
+                                    <div class="progress progress-small">
+                                        <div class="progress-bar" style="width: 29%;"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="key pull-right">LAN</div>
+                                <div class="stat">
+                                    <div class="info">6 Mb/s <i class="icon-caret-down"></i> &nbsp; 3 Mb/s <i class="icon-caret-up"></i></div>
+                                    <div class="progress progress-small">
+                                        <div class="progress-bar progress-bar-inverse" style="width: 48%;"></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jquery and friends -->
+<script src="./Light Blue - Admin Template_files/jquery.1.9.0.min.js"> </script>
+<script src="./Light Blue - Admin Template_files/jquery-migrate-1.1.0.min.js"> </script>
+
+<!-- jquery plugins -->
+<script src="./Light Blue - Admin Template_files/jquery.icheck.js"></script>
+<script src="./Light Blue - Admin Template_files/jquery.sparkline.js"></script>
+<script src="./Light Blue - Admin Template_files/jquery-ui-1.10.1.custom.js"></script>
+<script src="./Light Blue - Admin Template_files/jquery.slimscroll.js"></script>
+
+<!-- d3, nvd3-->
+<script src="./Light Blue - Admin Template_files/d3.v2.js"></script>
+<script src="./Light Blue - Admin Template_files/nv.d3.custom.js"></script>
+
+<!-- nvd3 models -->
+<script src="./Light Blue - Admin Template_files/scatter.js"></script>
+<script src="./Light Blue - Admin Template_files/axis.js"></script>
+<script src="./Light Blue - Admin Template_files/legend.js"></script>
+<script src="./Light Blue - Admin Template_files/multiBar.js"></script>
+<script src="./Light Blue - Admin Template_files/multiBarChart.js"></script>
+<script src="./Light Blue - Admin Template_files/line.js"></script>
+<script src="./Light Blue - Admin Template_files/lineChart.js"></script>
+<script src="./Light Blue - Admin Template_files/stream_layers.js"></script>
+
+<!--backbone and friends -->
+<script src="./Light Blue - Admin Template_files/underscore-min.js"></script>
+<script src="./Light Blue - Admin Template_files/backbone-min.js"></script>
+<script src="./Light Blue - Admin Template_files/backbone.localStorage-min.js"></script>
+
+<!-- bootstrap default plugins -->
+<script src="./Light Blue - Admin Template_files/transition.js"></script>
+<script src="./Light Blue - Admin Template_files/collapse.js"></script>
+<script src="./Light Blue - Admin Template_files/alert.js"></script>
+<script src="./Light Blue - Admin Template_files/tooltip.js"></script>
+<script src="./Light Blue - Admin Template_files/popover.js"></script>
+<script src="./Light Blue - Admin Template_files/button.js"></script>
+<script src="./Light Blue - Admin Template_files/tab.js"> </script>
+<script src="./Light Blue - Admin Template_files/dropdown.js"></script>
+
+<!-- basic application js-->
+<script src="./Light Blue - Admin Template_files/app.js"></script>
+<script src="./Light Blue - Admin Template_files/settings.js"></script>
+
+<!-- page specific -->
+<script src="./Light Blue - Admin Template_files/index.js"></script>
+<script src="./Light Blue - Admin Template_files/chat.js"></script>
+
+<script type="text/template" id="message-template">
+        <div class="sender pull-left">
+            <div class="icon">
+                <img src="img/2.jpg" class="img-circle" alt="">
+            </div>
+            <div class="time">
+                just now
+            </div>
+        </div>
+        <div class="chat-message-body">
+            <span class="arrow"></span>
+            <div class="sender">Tikhon Laninga</div>
+            <div class="text">
+               testg
+            </div>
+        </div>
+</script>
+
+<script type="text/template" id="settings-template">
+    <div class="setting clearfix">
+        <div>Background</div>
+        <div id="background-toggle" class="pull-left btn-group" data-toggle="buttons-radio">
+      
+            <button type="button" data-value="dark" class="btn btn-sm btn-transparent active">Dark</button>
+            <button type="button" data-value="light" class="btn btn-sm btn-transparent">Light</button>
+        </div>
+    </div>
+    <div class="setting clearfix">
+        <div>Sidebar on the</div>
+        <div id="sidebar-toggle" class="pull-left btn-group" data-toggle="buttons-radio">
+            
+            <button type="button" data-value="left" class="btn btn-sm btn-transparent active">Left</button>
+            <button type="button" data-value="right" class="btn btn-sm btn-transparent >">Right</button>
+        </div>
+    </div>
+    <div class="setting clearfix">
+        <div>Sidebar</div>
+        <div id="display-sidebar-toggle" class="pull-left btn-group" data-toggle="buttons-radio">
+       
+            <button type="button" data-value="true" class="btn btn-sm btn-transparent>">Show</button>
+            <button type="button" data-value="false" class="btn btn-sm btn-transparent>">Hide</button>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="sidebar-settings-template">
+   
+</script>
+
+
+</body></html>

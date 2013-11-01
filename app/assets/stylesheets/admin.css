@@ -1,6 +1,6 @@
 /*
  *= require_tree ./easy-pie-chart
- *= require_tree ./admin
+ *= require_tree ./admin/common
  */
 
 
@@ -10,8 +10,11 @@
  }
 
   #checkfunction .box .status_show {
-  	top: 40px;
-	position: absolute;
-	right: 25px;
-	width: 122px;
+  	text-align: left;
+
+ }
+
+
+ #checkfunction .health_status{
+ 	margin-left: 15px;	
  }

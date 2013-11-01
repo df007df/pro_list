@@ -6,6 +6,29 @@ Help.random = function(max) {
 	return parseInt(Math.random()*(max));
 };
 
+
+
+Help.text = {
+
+	danger: function(val) {
+		return '<span class="label label-danger">' + val + '</span>';
+	},
+
+	warning: function() {
+		return '<span class="label label-warning">' + val + '</span>';
+	},
+
+	info: function() {
+		return '<span class="label label-info">' + val + '</span>';
+	},
+
+	success: function() {
+		return '<span class="label label-success">' + val + '</span>';
+	}
+
+
+}
+
 Help.tableqs = {
 
 	_dataKey: {
@@ -35,8 +58,6 @@ Help.tableqs = {
 
 		var bak = function(data) {
 			var data = Help.tableqs.analyze(data, trobj.data());
-
-			console.log('asdata', data);
 
 			trobj.find('.today').text(data.today);
 			trobj.find('.total').text(data.total);
@@ -145,10 +166,15 @@ Help.easypie = {
 		scaleColor: '#dfe0e0',
 		lineCap: 'round',
 		lineWidth: 4,
-		size: 110
+		size: 130
 	},
 
 	bind: function(obj) {
+
+		this._config.onStep = function(value) {
+          this.$el.find('span').text(~~value);
+        }
+
 		obj.easyPieChart(this._config);
 	}
 

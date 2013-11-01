@@ -1,4 +1,4 @@
-        app_path = "/home/saas/tool/pro_list"
+        app_path = "./"
 
         listen 3000 # by default Unicorn listens on port 8080
         worker_processes 1 # this should be >= nr_cpus
