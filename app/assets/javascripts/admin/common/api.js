@@ -7,7 +7,8 @@ Admin.api = {
 
 	url: {
 		log: '/api/remotemonitoring/servers/log',
-	    checkfunction: '/api/remotemonitoring/servers/CheckFunction'
+	    checkfunction: '/api/remotemonitoring/servers/CheckFunction',
+	    loglist: '/api/remotemonitoring/servers/LogList'
 
 	},
 
@@ -24,12 +25,16 @@ Admin.api = {
 		});
 	},
 
-	getMLog: function(url, callback) {
-		this.fetch(url + this.url.log, '', callback);	
+	getMLog: function(host, callback) {
+		this.fetch(host + this.url.log, '', callback);	
 	},
 
-	getMcheckfunction: function(url, callback, error) {
-		this.fetch(url + this.url.checkfunction, '', callback, error);		
+	getMcheckfunction: function(host, callback, error) {
+		this.fetch(host + this.url.checkfunction, '', callback, error);		
+	},
+
+	getLogList: function(host, callback, rows) {
+		this.fetch(host + this.url.loglist, {rows: rows}, callback);
 	}
     
 };

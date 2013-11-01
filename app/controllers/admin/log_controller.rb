@@ -7,7 +7,9 @@ class Admin::LogController < ApplicationController
 
 
 	def list
+		@pro = Pro.find(params[:id])
 
+		@rows = params[:rows]
 
 
 	end	

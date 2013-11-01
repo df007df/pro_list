@@ -1,3 +1,12 @@
 /*
  *= require_tree ./common
  */
+
+ .search-result .Warning_div {
+ 	border-left: 5px solid rgb(229, 96, 59);
+ }
+
+.search-result .Error_div {
+ 	border-left: 5px solid rgb(234, 200, 94);
+}
+
