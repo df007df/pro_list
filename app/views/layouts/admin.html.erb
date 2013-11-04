@@ -12,6 +12,7 @@
 
 
   <%= csrf_meta_tags %>
+  <%== getPros%>
 
     <meta charset="utf-8">
 <style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style><style type="text/css">.jlhlebbhengjlhmcjebbkambaekglhkf {top: 0px; left: 0px;min-width: 30px;max-width: 300px;font-size: 13px;font-family: arial, helvetica, sans-serif;opacity: .93;padding:0px;position:absolute;display:block;z-index: 999997;font-style: normal;font-variant: normal;font-weight: normal;}#jlhlebbhengjlhmcjebbkambaekglhkf_up{text-align: center;padding:0px;margin: 0px;}#jlhlebbhengjlhmcjebbkambaekglhkf_cont{background-color: #729FCF;font-family: arial, helvetica, sans-serif-webkit-box-shadow: #729FCF 0px 0px 2px;color: #FFFFFF;padding:7px;-webkit-border-radius: 5px;}#jlhlebbhengjlhmcjebbkambaekglhkf_down{text-align: center;padding:0px;margin: 0px;}</style></head>
@@ -23,82 +24,10 @@
 <div class="logo">
     <h4><a href="http://demo.okendoken.com/index.html">Light <strong>Blue</strong></a></h4>
 </div>
-<nav id="sidebar" class="sidebar nav-collapse collapse">
-    <ul id="side-nav" class="side-nav">
-        <li class="active">
-            <a href="http://demo.okendoken.com/index.html"><i class="icon-home"></i> <span class="name">Dashboard</span></a>
-        </li>
-        <li class="panel">
-            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="http://demo.okendoken.com/#forms-collapse"><i class="icon-edit"></i> <span class="name">Forms</span></a>
-            <ul id="forms-collapse" class="panel-collapse collapse">
-                <li><a href="http://demo.okendoken.com/form_account.html">Account</a></li>
-                <li><a href="http://demo.okendoken.com/form_article.html">Article</a></li>
-                <li><a href="http://demo.okendoken.com/form_elements.html">Elements</a></li>
-                <li><a href="http://demo.okendoken.com/form_validation.html">Validation</a></li>
-                <li><a href="http://demo.okendoken.com/form_wizard.html">Wizard</a></li>
-            </ul>
-        </li>
-        <li class="panel">
-            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="http://demo.okendoken.com/#stats-collapse"><i class="icon-bar-chart"></i> <span class="name">Statistics</span></a>
-            <ul id="stats-collapse" class="panel-collapse collapse">
-                <li><a href="http://demo.okendoken.com/stat_statistics.html">Stats</a></li>
-                <li><a href="http://demo.okendoken.com/stat_charts.html">Charts</a></li>
-                <li><a href="http://demo.okendoken.com/stat_realtime.html">Realtime</a></li>
-            </ul>
-        </li>
-        <li class="panel">
-            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="http://demo.okendoken.com/#ui-collapse"><i class="icon-magic"></i> <span class="name">User Interface</span></a>
-            <ul id="ui-collapse" class="panel-collapse collapse">
-                <li><a href="http://demo.okendoken.com/ui_buttons.html">Buttons</a></li>
-                <li><a href="http://demo.okendoken.com/ui_dialogs.html">Dialogs</a></li>
-                <li><a href="http://demo.okendoken.com/ui_icons.html">Icons</a></li>
-                <li><a href="http://demo.okendoken.com/ui_tabs.html">Tabs</a></li>
-                <li><a href="http://demo.okendoken.com/ui_accordion.html">Accordion</a></li>
-            </ul>
-        </li>
-        <li class="panel">
-            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="http://demo.okendoken.com/#components-collapse"><i class="icon-bookmark-empty"></i> <span class="name">Components</span></a>
-            <ul id="components-collapse" class="panel-collapse collapse">
-                <li><a href="http://demo.okendoken.com/component_calendar.html">Calendar</a></li>
-                <li><a href="http://demo.okendoken.com/component_maps.html">Maps</a></li>
-                <li><a href="http://demo.okendoken.com/component_gallery.html">Gallery</a></li>
-                <li><a href="http://demo.okendoken.com/component_fileupload.html">Fileupload</a></li>
-            </ul>
-        </li>
-        <li class="panel">
-            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="http://demo.okendoken.com/#tables-collapse"><i class="icon-table"></i> <span class="name">Tables</span></a>
-            <ul id="tables-collapse" class="panel-collapse collapse">
-                <li><a href="http://demo.okendoken.com/tables_static.html">Static</a></li>
-                <li><a href="http://demo.okendoken.com/tables_dynamic.html">Dynamic</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="http://demo.okendoken.com/grid.html"><i class="icon-reorder"></i> <span class="name">Grid</span></a>
-        </li>
-        <li class="panel">
-            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="http://demo.okendoken.com/#special-collapse"><i class="icon-asterisk"></i> <span class="name">Special</span></a>
-            <ul id="special-collapse" class="panel-collapse collapse">
-                <li><a href="http://demo.okendoken.com/special_search.html">Search</a></li>
-                <li><a href="http://demo.okendoken.com/special_invoice.html">Invoice</a></li>
-                <li><a href="http://demo.okendoken.com/special_inbox.html">Inbox <span class="label label-important">3</span></a></li>
-                <li><a href="http://demo.okendoken.com/login.html">Login</a></li>
-                <li><a href="http://demo.okendoken.com/special_404.html">404</a></li>
-                <li><a href="http://demo.okendoken.com/landing.html">Landing</a></li>
-                <li><a href="http://demo.okendoken.com/white/index.html">White <i class="icon-external-link-sign"></i></a></li>
-            </ul>
-        </li>
-        <li class="visible-xs">
-            <a href="http://demo.okendoken.com/login.html"><i class="icon-signout"></i> <span class="name">Sign Out</span></a>
-        </li>
-    </ul>
-    <div id="sidebar-settings" class="settings">
-    
-    
-    <button type="button" data-value="icons" class="btn-icons btn btn-transparent btn-sm">Icons</button>
-    <button type="button" data-value="auto" class="btn-auto btn btn-transparent btn-sm">Auto</button>
-    
-</div>
-</nav>
+
+ <%= render :template => "layouts/navleft"%>
+
+
 <div class="wrap">
     <header class="page-header">
         <div class="navbar">

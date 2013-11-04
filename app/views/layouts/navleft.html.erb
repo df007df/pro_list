@@ -1,0 +1,89 @@
+<script>
+    var nav_id = '<%== @nav_id rescue nil%>';
+</script>
+
+<nav id="sidebar" class="sidebar nav-collapse collapse">
+    <ul id="side-nav" class="side-nav">
+        <li class="active">
+            <a href="/admin" target="_self"><i class="icon-home"></i> <span class="name">项目健康监控</span></a>
+        </li>
+        <li class="panel">
+            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="/#forms-admin-log"><i class="icon-edit"></i> <span class="name">日记查看</span></a>
+            <ul id="forms-admin-log" class="panel-collapse collapse">
+                <li><a href="<%== url_for :controller => 'admin/log', :action => 'index' %>" target="_blank">项目错误统计</a></li>
+ 
+
+            </ul>
+        </li>
+        <li class="panel">
+            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="http://demo.okendoken.com/#stats-collapse"><i class="icon-bar-chart"></i> <span class="name">Statistics</span></a>
+            <ul id="stats-collapse" class="panel-collapse collapse">
+                <li><a href="http://demo.okendoken.com/stat_statistics.html">Stats</a></li>
+                <li><a href="http://demo.okendoken.com/stat_charts.html">Charts</a></li>
+                <li><a href="http://demo.okendoken.com/stat_realtime.html">Realtime</a></li>
+            </ul>
+        </li>
+        <li class="panel">
+            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="http://demo.okendoken.com/#ui-collapse"><i class="icon-magic"></i> <span class="name">User Interface</span></a>
+            <ul id="ui-collapse" class="panel-collapse collapse">
+                <li><a href="http://demo.okendoken.com/ui_buttons.html">Buttons</a></li>
+                <li><a href="http://demo.okendoken.com/ui_dialogs.html">Dialogs</a></li>
+                <li><a href="http://demo.okendoken.com/ui_icons.html">Icons</a></li>
+                <li><a href="http://demo.okendoken.com/ui_tabs.html">Tabs</a></li>
+                <li><a href="http://demo.okendoken.com/ui_accordion.html">Accordion</a></li>
+            </ul>
+        </li>
+        <li class="panel">
+            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="http://demo.okendoken.com/#components-collapse"><i class="icon-bookmark-empty"></i> <span class="name">Components</span></a>
+            <ul id="components-collapse" class="panel-collapse collapse">
+                <li><a href="http://demo.okendoken.com/component_calendar.html">Calendar</a></li>
+                <li><a href="http://demo.okendoken.com/component_maps.html">Maps</a></li>
+                <li><a href="http://demo.okendoken.com/component_gallery.html">Gallery</a></li>
+                <li><a href="http://demo.okendoken.com/component_fileupload.html">Fileupload</a></li>
+            </ul>
+        </li>
+        <li class="panel">
+            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="http://demo.okendoken.com/#tables-collapse"><i class="icon-table"></i> <span class="name">Tables</span></a>
+            <ul id="tables-collapse" class="panel-collapse collapse">
+                <li><a href="http://demo.okendoken.com/tables_static.html">Static</a></li>
+                <li><a href="http://demo.okendoken.com/tables_dynamic.html">Dynamic</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="http://demo.okendoken.com/grid.html"><i class="icon-reorder"></i> <span class="name">Grid</span></a>
+        </li>
+        <li class="panel">
+            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="http://demo.okendoken.com/#special-collapse"><i class="icon-asterisk"></i> <span class="name">Special</span></a>
+            <ul id="special-collapse" class="panel-collapse collapse">
+                <li><a href="http://demo.okendoken.com/special_search.html">Search</a></li>
+                <li><a href="http://demo.okendoken.com/special_invoice.html">Invoice</a></li>
+                <li><a href="http://demo.okendoken.com/special_inbox.html">Inbox <span class="label label-important">3</span></a></li>
+                <li><a href="http://demo.okendoken.com/login.html">Login</a></li>
+                <li><a href="http://demo.okendoken.com/special_404.html">404</a></li>
+                <li><a href="http://demo.okendoken.com/landing.html">Landing</a></li>
+                <li><a href="http://demo.okendoken.com/white/index.html">White <i class="icon-external-link-sign"></i></a></li>
+            </ul>
+        </li>
+        <li class="visible-xs">
+            <a href="http://demo.okendoken.com/login.html"><i class="icon-signout"></i> <span class="name">Sign Out</span></a>
+        </li>
+    </ul>
+    <div id="sidebar-settings" class="settings">
+    
+    
+    <button type="button" data-value="icons" class="btn-icons btn btn-transparent btn-sm">Icons</button>
+    <button type="button" data-value="auto" class="btn-auto btn btn-transparent btn-sm">Auto</button>
+    
+</div>
+</nav>
+
+<script>
+    $(function() {
+        if (nav_id) {
+            $('#forms-' + nav_id).collapse('show');    
+        }
+        
+    });
+
+
+</script>

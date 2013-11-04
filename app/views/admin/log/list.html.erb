@@ -1,8 +1,11 @@
-
 <script>
 	var hostUrl = '<%== @pro.url rescue nil%>';
 	var rows = '<%== @rows rescue nil%>';
 </script>
+
+<% content_for :head_block do %>
+<%= javascript_include_tag 'admin/loglist'%>
+<% end %>
 
 <script id="log_item" type="text/html">
 	<section class="search-result {{type}}_div">
@@ -71,3 +74,13 @@
         </section>
     </div>
 </div>
+
+<script>
+    $(function() {
+
+        if (hostUrl) {
+            loglist.init(hostUrl);      
+        }
+
+    });
+</script>

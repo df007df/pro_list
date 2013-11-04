@@ -2,6 +2,37 @@
 
 
 
+Dashboard.log = {
+
+	init: function() {
+
+		var bak = function(pros) {
+			_.each(pros, function(pro) {
+				Dashboard.log.fetchPro(pro)
+			});
+			Help.tableqs.init($('#log_trend tbody'));
+		}
+
+		Dashboard.getPros(bak);
+	},
+
+
+	fetchPro: function(pro) {
+		var logListUrl = '/admin/log/list/' + pro.id;
+		var trTmp = ich.log_list_tr({name: pro.name, url: pro.url, logListUrl: logListUrl})
+		$('#log_trend tbody').append(trTmp);
+	},
+
+	renderSparkline: function() {
+
+		HelpSparkline.base();
+
+	}
+
+
+};
+
+
 var loglist = loglist || {};
 
 
@@ -26,13 +57,3 @@ loglist.renderLog = function(logs) {
 	});
 
 };
-
-$(function() {
-
-	if (hostUrl) {
-		loglist.init(hostUrl);		
-	}
-	
-
-
-});

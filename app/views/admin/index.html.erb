@@ -1,6 +1,4 @@
-admin/index
 
-<%== getPros%>
 
 <div class="row">
     <div class="col-md-12">
@@ -13,62 +11,6 @@ admin/index
 <div class="row" id='checkfunction'></div>
 <!--checkfunction end-->
 
-<div class="row">
-    <div class="col-md-8">
-
-
-        <section class="widget">
-            <header>
-                <h4>
-                    <i class="icon-shopping-cart"></i>
-                    项目错误统计
-                    <small>
-                        php运行错误
-                    </small>
-                </h4>
-            </header>
-            <div class="body">
-                <table class="table table-striped no-margin sources-table" id='log_trend'>
-                    <thead>
-                    <tr>
-                        <th class="source-col-header">项目名称</th>
-                        <th>错误数</th>
-                        <th>错误趋势</th>
-                        <th class="hidden-xs">所占历史比例 %</th>
-                        <th>总错误数</th>
-                        <th class="chart-col-header hidden-xs">趋势图</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-
-    </div>
-
-
-</div>
-
-
-<script id="log_list_tr" type="text/html">
- <tr data-url='{{url}}' data-today='today' data-total='total' data-yesterday='yesterday' data-qs='qs' data-bl='bl' data-qsdata='qsdata'>
-    <td><span class="label label-info">
-    <a href="{{logListUrl}}" style='color:#fff;' title='{{url}}' target='_blank'>{{name}}</a>
-    </span></td>
-    <td class='today'>{{today}}</td>
-    <td><strong class="qs">{{qs}}</strong></td>
-    <td class="hidden-xs bl">{{bl}}</td>
-    <td class='total'>{{total}}</td>
-    <td class="chart-cell hidden-xs">
-        <div class="direct-trend">
-        
-        </div>
-    </td>
-</tr>
-</script>
 
 
 
