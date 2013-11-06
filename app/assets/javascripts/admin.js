@@ -30,7 +30,7 @@ Dashboard.checkfunction = {
 			var url = $(this).data('url')
 				obj = $(this);
 
-			_this.checkStatus(url, obj);	
+			_this.checkStatus(url, obj);
 
 		});
 
@@ -39,16 +39,16 @@ Dashboard.checkfunction = {
 	checkStatus: function(url, obj) {
 		var _this = this;
 		var bak = function(data) {
-				
-			_this.checkStatusToShow(obj, data);	
-		};	
+
+			_this.checkStatusToShow(obj, data);
+		};
 
 	    var error = function() {
 			_this.checkStatusToShow(obj, null);
 		};
 
 		Admin.api.getMcheckfunction(
-			url, 
+			url,
 			bak,
 			error
 		);
@@ -82,19 +82,19 @@ Dashboard.checkfunction = {
 	},
 
 	editPieVal: function(obj, data, errors) {
-		var errorsCount = _.size(errors),
-		dataCount = _.size(data),
+		var errorsCount = _.size(errors) || 0,
+		dataCount = _.size(data) || 0,
 		val = 0;
-		val = (errorsCount / dataCount * 100).toFixed(1);
+		val = ((dataCount - errorsCount) / dataCount * 100).toFixed(1);
 		obj.data('easyPieChart').update(val);
 	},
 
 	showErrorList: function(obj, errors) {
 		var notice = this._getShowListObj(obj).empty();
-	
+
 		_.each(errors, function(val, k) {
-		
-			notice.append(Help.text.danger((k + 1) + ' ' + val) + '<br/>');	
+
+			notice.append(Help.text.danger((k + 1) + ' ' + val) + '<br/>');
 
 		});
 
@@ -104,7 +104,7 @@ Dashboard.checkfunction = {
 
 	showUnableToConnect: function(obj) {
 		var notice = this._getShowListObj(obj).empty();
-		notice.html(Help.text.danger('bad!'));	
+		notice.html(Help.text.danger('bad!'));
 	}
 
 
@@ -114,8 +114,8 @@ Dashboard.checkfunction = {
 
 
 $(function() {
-	
+
 
 	Dashboard.checkfunction.init();
 });
-	
+
