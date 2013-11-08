@@ -1,17 +1,13 @@
-<script>
-    var nav_id = '<%== @nav_id rescue nil%>';
-</script>
-
 <nav id="sidebar" class="sidebar nav-collapse collapse">
     <ul id="side-nav" class="side-nav">
-        <li class="active">
+        <li class="panel">
             <a href="/admin" target="_self"><i class="icon-home"></i> <span class="name">项目健康监控</span></a>
         </li>
         <li class="panel">
             <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="/#forms-admin-log"><i class="icon-edit"></i> <span class="name">日记查看</span></a>
             <ul id="forms-admin-log" class="panel-collapse collapse">
                 <li><a href="<%== url_for :controller => 'admin/log', :action => 'index' %>" target="_blank">项目错误统计</a></li>
- 
+
 
             </ul>
         </li>
@@ -69,20 +65,23 @@
         </li>
     </ul>
     <div id="sidebar-settings" class="settings">
-    
-    
+
+
     <button type="button" data-value="icons" class="btn-icons btn btn-transparent btn-sm">Icons</button>
     <button type="button" data-value="auto" class="btn-auto btn btn-transparent btn-sm">Auto</button>
-    
+
 </div>
 </nav>
 
 <script>
+    var nav_id = '<%== @nav_id rescue nil%>';
     $(function() {
         if (nav_id) {
-            $('#forms-' + nav_id).collapse('show');    
+            $('#side-nav > li').removeClass('active');
+            $('#forms-' + nav_id).closest('li').addClass('active');
+            $('#forms-' + nav_id).collapse('show');
         }
-        
+
     });
 
 

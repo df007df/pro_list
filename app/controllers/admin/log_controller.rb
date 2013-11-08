@@ -8,15 +8,15 @@ class Admin::LogController < ApplicationController
 	end
 
 	def index
+        @nav_id = 'admin-log'
 
-		
-	end	
+	end
 
 
 	def list
 		@rows = params[:rows]
 
-	end	
+	end
 
 
 	private
@@ -27,8 +27,8 @@ class Admin::LogController < ApplicationController
 	  	@pro = Pro.find(params[:id])
 	  rescue
 	  	render_not_found
-	  end	
+	  end
 
     end
 
-end	
+end

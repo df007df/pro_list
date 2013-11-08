@@ -104,7 +104,7 @@ Dashboard.checkfunction = {
 
 	showUnableToConnect: function(obj) {
 		var notice = this._getShowListObj(obj).empty();
-		notice.html(Help.text.danger('bad!'));
+		notice.html(Help.text.danger('Lost Target!'));
 	}
 
 
